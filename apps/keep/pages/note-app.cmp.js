@@ -10,9 +10,9 @@ export default {
 
     template: `
     <section class="note-app">
-        <note-filter />
+        <note-filter @filter="filter" />
         <note-add @note-added="addNote"/>
-        <note-list @duplicate-note="addNote"  @pin-note="pinNote" @update-note="changeBgColor" @delete-note="deleteNote" v-if="notes" :notes="notes"/>
+        <note-list @duplicate-note="addNote"  @pin-note="pinNote" @update-note="changeBgColor" @delete-note="deleteNote" v-if="notes" :notes="notesToDisplay"/>
     </section>
     `,
     created() {
@@ -24,9 +24,16 @@ export default {
     data() {
         return {
             notes: null,
+            filterBy: {
+                txt: '',
+                types: ['note-txt','note-img','note-video'],
+            }
         }
     },
     methods: {
+        filter(filterBy){
+            this.filterBy = filterBy
+        },
         addNote(newNote) {
             noteService.post(newNote)
                 .then(() => {
@@ -58,7 +65,19 @@ export default {
         },
     },
     computed: {
-
+        notesToDisplay(){
+            const regex = new RegExp(this.filterBy.txt, 'i')
+            let notes = this.notes.filter(note => regex.test(note.info.txt))            
+            notes = this.notes.filter(note => {
+                var isMatch = false
+                this.filterBy.types.forEach(type => {
+                    if(type === note.type) 
+                    isMatch = true
+                })
+                return isMatch 
+            })
+            return notes
+        }
     },
     components: {
         noteAdd,

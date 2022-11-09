@@ -2,19 +2,21 @@
     grid-row: span 2;
     /* padding: 10px; */
     /* box-shadow: 2px 1px 4px #7c7c7c; */
-    
+
 }
-.note-filter .search{
+
+.note-filter .search {
     margin-top: 10px;
     margin-left: 10px;
     padding: .5em;
     border: 0;
     background-color: white;
     border-radius: 10px;
-    box-shadow:0 0 4px 1px;
+    box-shadow: 0 0 4px 1px;
     margin-bottom: 10px;
 
 }
+
 .note-filter h3 {
     font-family: Arial, Helvetica, sans-serif;
     padding: 10px;
@@ -22,11 +24,39 @@
     border-end-end-radius: 1em;
     padding-left: -10px;
 }
-.note-filter h3:hover{
-    background-color: yellow;
+
+.note-filter h3:hover {
+    background-color: #feefc3;
 }
-.note-filter ul {
-    position: fixed;
-    height: 0;
+
+.note-filter .wrapper {
+    max-height: 0;
     overflow: hidden;
+    transition: max-height 1s;
+}
+
+.note-filter ul {
+    /* padding-right: 2px; */
+    list-style-type: none;
+}
+
+.note-filter .wrapper.display {
+
+    max-height: fit-content;
+
+    animation: myAnim 2s ease 0s 1 normal forwards;
+}
+
+@keyframes myAnim {
+    0% {
+        opacity: 0;
+        transform: rotateX(40deg);
+        transform-origin: top;
+    }
+
+    100% {
+        opacity: 1;
+        transform: rotateX(0deg);
+        transform-origin: top;
+    }
 }

@@ -1,4 +1,5 @@
 .note-preview {
+
     padding: 5px;
     display: flex;
     flex-direction: column;
@@ -8,6 +9,7 @@
     border: 1px solid #7c7c7c;
     border-radius: 5px;
     transition: box-shadow .2s;
+    overflow-wrap: anywhere;
 }
 .note-preview:hover {
     box-shadow: 0 0 5px 0px #7c7c7c;
@@ -37,7 +39,10 @@
 
 .options {
     display: flex;
+    /* display: none; */
+    /* position: fixed; */
 }
+
 
 .pallete-holder{
     position: relative;

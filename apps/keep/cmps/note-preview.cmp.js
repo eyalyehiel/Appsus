@@ -8,8 +8,8 @@ export default {
     template:`
     <article :style="note.style" class="note-preview">
 
-        <component :is="note.type" :info="note.info" />
-        <section class="options">
+        <component  :is="note.type" :info="note.info" />
+        <section class="options" >
             <button @click="duplicateNote"><img src="./assets/img/icons/copy.png"></button>
             <button @click="deleteNote"><img src="./assets/img/icons/garbage.png"></button>
             <button class="pallete-holder"><img src="./assets/img/icons/pallete.png"><input type="color" class="pallete" ref="pallete" @input="changeBgColor"></button>
@@ -18,6 +18,11 @@ export default {
         </section>
     </article>
     `,
+    data(){
+        return{
+            optionsOpen: false
+        }
+    },
     methods: {
         deleteNote(){
             this.$emit('delete-note',this.note.id)
