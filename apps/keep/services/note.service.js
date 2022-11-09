@@ -5,6 +5,8 @@ export const noteService ={
     query,
     get,
     post,
+    remove,
+    put
 }
 
 const NOTES_KEY = 'notesDB'
@@ -61,4 +63,10 @@ function get(noteId) {
 }
 function post(newNote){
     return storageService.post(NOTES_KEY,newNote)
+}
+function remove(noteId){
+    return storageService.remove(NOTES_KEY,noteId)
+}
+function put(note){
+    return storageService.put(NOTES_KEY,note)
 }
