@@ -2,7 +2,6 @@ export const utilService = {
     makeId
 }
 
-
 function makeId(length = 5) {
     var txt = ''
     var possible = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'
