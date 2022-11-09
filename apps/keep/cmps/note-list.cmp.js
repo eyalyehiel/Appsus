@@ -8,7 +8,6 @@ export default {
      </section>
     `,
     created(){
-        console.log(this.notes);
     },
     data(){
         return{

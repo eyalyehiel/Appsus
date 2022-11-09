@@ -22,5 +22,6 @@
 @import 'apps/note/note-add.css';
 @import 'apps/note/note-list.css';
 @import 'apps/note/note-preview.css';
+
 /* ---mail-cmp--- */
 @import 'apps/mail/email-preview.css';
