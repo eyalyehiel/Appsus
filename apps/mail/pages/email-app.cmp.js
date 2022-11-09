@@ -1,16 +1,17 @@
+import emailList from '../cmps/email-list.cmp.js';
+import emailFilter from '../cmps/email-filter.cmp.js';
+
+
 export default {
     components: {
-        bookList,
-        bookFilter,
-        bookService,
-        bookDetails,
+        emailList,
+        emailFilter,
     },
     template: `
-    <section class="book-app">
-      <book-filter @filtered="setFilter"/>
-      <!-- <book-details  @close="closeDetails"/> -->
-      <book-list v-else :books="booksToShow"  class="cards-container" @remove="removeBook"/>
-    </section>
+        <section class="email-app">
+            <h1>email</h1>
+           
+        </section>
     `,
     created() {
         this.loadBooks();
@@ -18,8 +19,9 @@ export default {
     },
     data() {
         return {
-            books: [],
-            filterBy: null
+            emails: null,
+            selectedMail: null,
+            filterBy: '',
         };
     },
     methods: {
