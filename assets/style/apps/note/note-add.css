@@ -1,0 +1,36 @@
+.note-add {
+    display: grid;
+    place-items: center;
+}
+
+.note-add form {
+    box-shadow:0 0 4px 1px;
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.note-add input, .note-add button{
+    border: 0;
+    background-color: white;
+}
+
+.note-add button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.note-add img {
+    width: 24px;
+}
+
+.first{
+    border-start-start-radius: 10px;
+    border-end-start-radius: 10px;
+}
+
+.last {
+    border-start-end-radius: 10px;
+    border-end-end-radius: 10px;
+}
