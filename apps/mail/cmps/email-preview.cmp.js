@@ -17,6 +17,7 @@ export default {
            <p>{{email.sentAt}}</p>
            <div class="icons-preview">
            <i class="fas fa-trash" :class={opacity:hover} @click.stop="deleteEmail(email.id)" ></i>
+           <i :class="setIcon" @click.stop="toggleIcon(email)"></i>
            </div>
         </div>
     `,
@@ -40,9 +41,17 @@ export default {
             console.log(email);
             email.isStar = !email.isStar
             emailService.save(email)
-        }
+        },
+        toggleIcon(email) {
+            email.isRead = !email.isRead
+            emailService.save(email)
+                
+        },
     },
     computed: {
-
+        setIcon() {
+            if (this.email.isRead) return 'fas fa-envelope-open'
+            return 'fas fa-envelope'
+        },
     },
 }
