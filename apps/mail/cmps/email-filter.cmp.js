@@ -1,17 +1,9 @@
 // import emailCompose from '../cmps/email-compose.cmp.js';
-<<<<<<< HEAD
-=======
-
->>>>>>> 1904a5f63daf257783047d4070ae6c613b1715fb
 
 export default {
     props: ['counter'],
     components: {
 
-<<<<<<< HEAD
-        
-=======
->>>>>>> 1904a5f63daf257783047d4070ae6c613b1715fb
     },
     template: `
         <div class="gmail-filter">
