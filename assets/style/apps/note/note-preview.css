@@ -23,6 +23,7 @@
     align-items: center;
     justify-content: center;
     border: 0;
+    border-radius: 3em;
     background-color: rgba(0, 0, 0, 0);
 }
 
@@ -30,10 +31,25 @@
     background: radial-gradient( #B1B1B1 20%, #fff 71%);
 }
 
-.note-preview img {
+.note-preview button>img {
     width: 24px;
 }
 
 .options {
     display: flex;
 }
+
+.pallete-holder{
+    position: relative;
+}
+.pallete {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+}
+    img{
+        width: 252px;
+    }
