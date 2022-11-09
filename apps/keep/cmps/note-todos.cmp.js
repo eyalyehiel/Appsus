@@ -1,14 +1,14 @@
 export default {
     props: ['info'],
     template: `
-    <section>
+    <section class="note-info">
         <h3>{{ info.label }}</h3>
         <p>note tofo</p>
 
     </section>
     `,
     created() {
-        console.log(this.info);
+        console.log('created todo note');
     },
     data() {
         return {

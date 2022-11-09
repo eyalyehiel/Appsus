@@ -1,7 +1,7 @@
 export const utilService = {
     makeId,
     saveToStorage,
-    loadFromStorage
+    loadFromStorage,
 }
 
 function makeId(length = 5) {

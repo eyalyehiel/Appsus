@@ -1,16 +1,17 @@
 export default {
     props: ['info'],
-    template:`
-    <section>
+    template: `
+    <section class="note-info">
         <h3>{{ info.title }}</h3>
-        <p>note img</p>
+        <img :src="info.url" alt="" />
 
     </section>
-    `,        created(){
-            console.log(this.info);
-        },
-    data(){
-        return{
+    `,
+    created() {
+        console.log('created video note');
+    },
+    data() {
+        return {
 
         }
     },

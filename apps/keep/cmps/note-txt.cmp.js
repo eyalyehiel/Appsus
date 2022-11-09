@@ -1,13 +1,12 @@
 export default {
     props: ['info'],
     template:`
-    <section>
+    <section class="note-info">
         <h3>{{ info.txt }}</h3>
-        <p>note txt</p>
     </section>
     `,
         created(){
-            console.log(this.info);
+            console.log('created txt note');
         },
     data(){
         return{

@@ -4,8 +4,18 @@
     flex-direction: column;
     justify-content: space-between;
     height: fit-content;
-    background-color: antiquewhite;
+    width: max-content;
     border: 1px solid #7c7c7c;
+    border-radius: 5px;
+    transition: box-shadow .2s;
+}
+.note-preview:hover {
+    box-shadow: 0 0 5px 0px #7c7c7c;
+}
+
+.note-preview .note-info{
+    width: 200px;
+    overflow: hidden;
 }
 
 .note-preview button{
@@ -14,6 +24,10 @@
     justify-content: center;
     border: 0;
     background-color: rgba(0, 0, 0, 0);
+}
+
+.note-preview button:hover{
+    background: radial-gradient( #B1B1B1 20%, #fff 71%);
 }
 
 .note-preview img {
