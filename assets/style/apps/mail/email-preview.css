@@ -1,7 +1,12 @@
 .email-app {
     margin-top: 5%;
     justify-content: space-between;
-    
+    display: grid;
+    grid-template-areas: "gmail-filter email-list ";
+}
+
+.email-app .gmail-filter {
+    position: fixed;
 }
 
 .email-list {
@@ -33,6 +38,33 @@
     background-color: rgba(233, 233, 233, 0.726);
     margin-inline-end: 4px;
     cursor: pointer;
+}
+
+.gmail-filter {
+    margin-top: 15px;
+    margin-inline-start: 20px;
+}
+
+.filter {
+    background-color: rgba(223, 222, 222, 0.342);
+    margin-bottom: 2px;
+    border-radius: 3px;
+    border: 0.5px solid rgba(223, 222, 222, 0.342);
+    display: flex;
+    gap: 40px;
+    padding: 15px;
+}
+
+.filter:hover {
+    border: 0.5px solid rgba(209, 209, 209, 0.884);
+}
+
+.opacity {
+    color: rgba(255, 255, 255, 0);
+}
+
+.icons-preview>* {
+    padding-right: 20px;
 }
 
 img{
@@ -67,3 +99,9 @@ img{
     margin: 10px;
     padding: 20px;
 }
+
+.checked {
+    color: red;
+}
+
+

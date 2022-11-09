@@ -261,7 +261,7 @@ _createMails()
 export const emailService = {
     query,
     save,
-    // remove,
+    remove,
     // getById,
     // getEmptyMail
 };
@@ -281,4 +281,8 @@ function query() {
 function save(mail) {
     if (mail.id) return storageService.put(EMAILS_KEY, mail);
     else return storageService.post(EMAILS_KEY, mail);
+}
+
+function remove(emailId) {
+    return storageService.remove(EMAILS_KEY, emailId);
 }

@@ -7,16 +7,12 @@ export default {
     components: {
         emailList,
         emailFilter,
+        emailService
     },
     template: `
         <section class="email-app">
-            <h1><span><img src="./assets/img/icons/primary.png" alt=""></span> Primary</h1>
-
-            
-           
-                <email-list :emails="MailToShow"  @remove="deleteEmail"/>
-                
-            
+            <email-filter @filtered="setFilter" />
+            <email-list :emails="MailToShow" @remove="deleteEmail"/>         
         </section>
     `,
     created() {
@@ -33,14 +29,21 @@ export default {
     methods: {
         loadMails() {
             emailService.query()
-                .then(emails => {this.emails = emails})
+                .then(emails => { this.emails = emails })
         },
-        deleteEmail(){
-            console.log(emailId);
-        }
+        deleteEmail(emailId) {
+            emailService.remove(emailId).then(()=>{
+                this.emails = this.emails.filter(email => email.id !== emailId)
+                this.loadMails();
+                console.log(this.emails)
+            })
+        },
+        setFilter(filterBy) {
+            this.filterBy = filterBy;
+        },
     },
     computed: {
-        MailToShow(){
+        MailToShow() {
             if (!this.filterBy) return this.emails;
             if (this.filterBy === 'inbox') {
                 return this.emails.filter(email => !email.isTrash || !email.isDrafts)
