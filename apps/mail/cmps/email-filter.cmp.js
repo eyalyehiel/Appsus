@@ -3,11 +3,7 @@
 export default {
     props: ['counter'],
     components: {
-
-<<<<<<< HEAD
-        
-=======
->>>>>>> b807f111426b4dad597aed72d8887a5c5e241e58
+      
     },
     template: `
         <div class="gmail-filter">
