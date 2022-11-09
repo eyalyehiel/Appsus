@@ -1,13 +1,10 @@
 export default {
     props: ['info'],
     template:`
-    <section class="note-info">
-        <h3>{{ info.txt }}</h3>
-        <p>note vid</p>
-
+    <section v-html="info.url" class="note-info">
+        
     </section>
     `,        created(){
-            console.log('created video note');
         },
     data(){
         return{

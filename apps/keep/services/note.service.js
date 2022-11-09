@@ -6,7 +6,9 @@ export const noteService ={
     get,
     post,
     remove,
-    put
+    put,
+    pin,
+
 }
 
 const NOTES_KEY = 'notesDB'
@@ -45,8 +47,8 @@ const gNotes = [
     
 ];
 
+
 _createNotes()
-console.log('ji');
 function _createNotes() {
     let notes = utilService.loadFromStorage(NOTES_KEY)
     if (!notes || !notes.length) {
@@ -69,4 +71,13 @@ function remove(noteId){
 }
 function put(note){
     return storageService.put(NOTES_KEY,note)
+}
+function pin(noteId){
+    return storageService.query(NOTES_KEY)
+                        .then(notes => {
+                            const idx = notes.findIndex(note => note.id === noteId)
+                            const note = notes.splice(idx,1)[0]
+                            notes.unshift(note)
+                            utilService.saveToStorage(NOTES_KEY,notes)
+                        })
 }

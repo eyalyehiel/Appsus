@@ -6,7 +6,6 @@ export default {
     </section>
     `,
         created(){
-            console.log('created txt note');
         },
     data(){
         return{

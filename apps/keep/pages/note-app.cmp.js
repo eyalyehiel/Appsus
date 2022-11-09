@@ -12,7 +12,7 @@ export default {
     <section class="note-app">
         <note-filter />
         <note-add @note-added="addNote"/>
-        <note-list @update-note="changeBgColor" @delete-note="deleteNote" v-if="notes" :notes="notes"/>
+        <note-list @duplicate-note="addNote"  @pin-note="pinNote" @update-note="changeBgColor" @delete-note="deleteNote" v-if="notes" :notes="notes"/>
     </section>
     `,
     created() {
@@ -23,7 +23,7 @@ export default {
     },
     data() {
         return {
-            notes: null
+            notes: null,
         }
     },
     methods: {
@@ -40,14 +40,22 @@ export default {
                     noteService.query()
                         .then(notes => this.notes = notes)
                 })
+            
         },
-        changeBgColor(note){
+        changeBgColor(note) {
             noteService.put(note)
-            .then(() => {
-                noteService.query()
-                    .then(notes => this.notes = notes)
-            })
-        }
+                .then(() => {
+                    noteService.query()
+                        .then(notes => this.notes = notes)
+                })
+        },
+        pinNote(noteId) {
+            noteService.pin(noteId)
+                .then(() => {
+                    noteService.query()
+                        .then(notes => this.notes = notes)
+                })
+        },
     },
     computed: {
 

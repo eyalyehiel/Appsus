@@ -14,7 +14,7 @@
 }
 
 .note-preview .note-info{
-    width: 200px;
+    width: 250px;
     overflow: hidden;
 }
 
@@ -51,5 +51,8 @@
     opacity: 0;
 }
     img{
+        width: 252px;
+    }
+    iframe{
         width: 252px;
     }

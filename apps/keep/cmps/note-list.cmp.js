@@ -4,14 +4,15 @@ export default {
     props: ['notes'],
     template:`
      <section class="note-list">
-        <book-preview @update-note="changeBgColor" @delete-note="deleteNote" :note="note" v-for="note in notes" :key="note.id"/>
+        
+        <book-preview @duplicate-note="duplicateNote" @pin-note="pinNote" @update-note="changeBgColor" @delete-note="deleteNote" :note="note" v-for="note in notes" :key="note.id"/>
      </section>
     `,
     created(){
+
     },
     data(){
         return{
-
         }
     },
     methods: {
@@ -20,6 +21,12 @@ export default {
         },
         changeBgColor(note){
             this.$emit('update-note',note)
+        },
+        pinNote(noteId){
+            this.$emit('pin-note',noteId)
+        },
+        duplicateNote(duplicated){
+            this.$emit('duplicate-note', duplicated)
         }
     },
     computed: {
