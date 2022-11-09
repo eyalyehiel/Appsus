@@ -5,6 +5,7 @@ export default {
     components: {
 
         
+      
     },
     template: `
         <div class="gmail-filter">
