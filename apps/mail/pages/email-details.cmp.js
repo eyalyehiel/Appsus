@@ -11,7 +11,7 @@ export default {
         <main class="email-details-container">
           <section v-if="email">
                <div>
-               <h1>1111111111</h1>
+               
               </div>
           </section>
         </main>
@@ -30,6 +30,7 @@ export default {
     methods: {
 
     },
+    
     computed: {
 
     },

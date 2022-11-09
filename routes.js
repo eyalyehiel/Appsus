@@ -24,11 +24,10 @@ const routerOptions = {
 		{
 			path: '/email',
 			component: emailApp,
-		    children:{
-				path: '/email/:emailId',
-				component: emailDetails,
-				
-			}
+		},
+		{
+			path: '/email/:emailId',
+			component: emailDetails,
 		}
 	],
 }

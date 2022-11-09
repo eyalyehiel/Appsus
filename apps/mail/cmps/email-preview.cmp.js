@@ -48,10 +48,10 @@ export default {
                 
         },
         setDetails(emailId){
-            console.log(emailId);
-
+            console.log('emailIdemailId',emailId )
             this.email.isRead = true
             emailService.save(this.email)
+
             this.$router.push('/email/'+emailId)
         }
     },
