@@ -262,7 +262,7 @@ export const emailService = {
     query,
     save,
     remove,
-    // getById,
+    getById,
     // getEmptyMail
 };
 
@@ -285,4 +285,12 @@ function save(mail) {
 
 function remove(emailId) {
     return storageService.remove(EMAILS_KEY, emailId);
+}
+
+function getById(emailId) {
+    console.log('emailId',emailId)
+    return storageService.get(EMAILS_KEY, emailId)
+        .then(email => {
+            return email
+        })
 }

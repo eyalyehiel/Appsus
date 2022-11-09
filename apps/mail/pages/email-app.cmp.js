@@ -1,17 +1,19 @@
 import emailList from '../cmps/email-list.cmp.js';
 import emailFilter from '../cmps/email-filter.cmp.js';
 import { emailService } from '../services/email.service.js';
-
+import emailDetails from '../pages/email-details.cmp.js'
 
 export default {
     components: {
         emailList,
         emailFilter,
-        emailService
+        emailService,
+        emailDetails
     },
     template: `
         <section class="email-app">
             <email-filter @filtered="setFilter" />
+            <!-- <email-details/> -->
             <email-list :emails="MailToShow" @remove="deleteEmail"/>         
         </section>
     `,
