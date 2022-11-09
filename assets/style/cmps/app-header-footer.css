@@ -1,0 +1,26 @@
+.app-header ,.app-footer{
+  background-color: white;
+  box-shadow: 0px 1px 2px 0px black;
+  height: 10vh;
+  padding: 1em;
+  display: flex;
+  align-items: center;
+}
+.app-header {
+  box-shadow: 0px 1px 2px 0px black;
+  justify-content: space-between;
+
+}
+
+.app-header h1 {
+  font-weight: bold;
+  font-family: Comfortaa;
+}
+
+
+
+.app-footer {
+  box-shadow: 0px -1px 2px 0px black;
+  justify-content: center;
+
+}
