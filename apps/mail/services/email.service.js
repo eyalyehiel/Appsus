@@ -21,7 +21,7 @@ const gMails = [{
      
      Registered office: Adobe Systems Software Ireland Limited, 4‑6 Riverwalk, Citywest Business Park, Dublin 24, Ireland. Registered number: 344992`],
     isRead: false,
-    sentAt: '',
+    sentAt: new Date().toLocaleString(),
     to: 'momo@momo.com',
     sendBy: 'Wizz Air',
     isStar: true,
@@ -42,7 +42,7 @@ const gMails = [{
 
     The Canva Team`],
     isRead: false,
-    sentAt: '',
+    sentAt: new Date().toLocaleString(),
     to: 'start@engage.canva.com',
     sendBy: 'Canva',
     isStar: false,
@@ -64,7 +64,7 @@ const gMails = [{
 
     `],
     isRead: false,
-    sentAt: '',
+    sentAt: new Date().toLocaleString(),
     to: 'newsletter@armadamusic.com',
     sendBy: 'A State Of Trance',
     isStar: false,
@@ -92,7 +92,7 @@ const gMails = [{
 
     When you become a Motley Fool member, you'll be joining a thriving community of likeminded investors that love this service. And I'm confident you `,],
     isRead: false,
-    sentAt: '',
+    sentAt: new Date().toLocaleString(),
     to: 'fool@foolsubs.com',
     sendBy: 'The Motley Fool',
     isStar: false,
@@ -111,7 +111,7 @@ const gMails = [{
     © 2021 AEO Management Co. All Rights Reserved.
     `],
     isRead: false,
-    sentAt: '',
+    sentAt: new Date().toLocaleString(),
     to: 'ae@e.ae.com',
     sendBy: 'Real Rewards by AE & Aerie',
     isStar: false,
@@ -131,7 +131,7 @@ const gMails = [{
     Adobe, Adobe Acrobat and the Adobe logo are either registered trademarks or trademarks of Adobe in the United States and/or other countries. All other trademarks are the property of their respective owners.
     `],
     isRead: false,
-    sentAt: '',
+    sentAt: new Date().toLocaleString(),
     to: 'mail@mail.adobe.com',
     sendBy: 'Adobe Acrobat',
     isStar: false,
@@ -148,7 +148,7 @@ const gMails = [{
     `,`Today also sees the release of a new remix of My Universe by Swedish electronic super duo Galantis. The track is available to stream / download everywhere now
     `,`The Coldplay Messenger`],
     isRead: false,
-    sentAt: '',
+    sentAt: new Date().toLocaleString(),
     to: 'momo@momo.com',
     sendBy: 'Wizz Air',
     isStar: false,
@@ -175,7 +175,7 @@ const gMails = [{
      
      Registered office: Adobe Systems Software Ireland Limited, 4‑6 Riverwalk, Citywest Business Park, Dublin 24, Ireland. Registered number: 344992`],
     isRead: false,
-    sentAt: '',
+    sentAt: new Date().toLocaleString(),
     to: 'momo@momo.com',
     sendBy: 'Wizz Air',
     isStar: true,
@@ -196,7 +196,7 @@ const gMails = [{
 
     The Canva Team`],
     isRead: false,
-    sentAt: '',
+    sentAt: new Date().toLocaleString(),
     to: 'start@engage.canva.com',
     sendBy: 'Canva',
     isStar: false,
@@ -218,7 +218,7 @@ const gMails = [{
 
     `],
     isRead: false,
-    sentAt: '',
+    sentAt: new Date().toLocaleString(),
     to: 'newsletter@armadamusic.com',
     sendBy: 'A State Of Trance',
     isStar: false,
@@ -246,7 +246,7 @@ const gMails = [{
 
     When you become a Motley Fool member, you'll be joining a thriving community of likeminded investors that love this service. And I'm confident you `,],
     isRead: false,
-    sentAt: '',
+    sentAt: new Date().toLocaleString(),
     to: 'fool@foolsubs.com',
     sendBy: 'The Motley Fool',
     isStar: false,
@@ -260,8 +260,8 @@ _createMails()
 
 export const emailService = {
     query,
+    save,
     // remove,
-    // save,
     // getById,
     // getEmptyMail
 };
@@ -276,4 +276,9 @@ function _createMails() {
 
 function query() {
     return storageService.query(EMAILS_KEY);
+}
+
+function save(mail) {
+    if (mail.id) return storageService.put(EMAILS_KEY, mail);
+    else return storageService.post(EMAILS_KEY, mail);
 }

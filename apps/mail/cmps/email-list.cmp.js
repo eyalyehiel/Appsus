@@ -1,14 +1,16 @@
-import { emailService } from '../services/mail.service.js';
+import { emailService } from '../services/email.service.js';
+import emailPreview from './email-preview.cmp.js';
 
 export default {
     props: ['emails'],
+    components: {
+        emailPreview,
+    },
     template:`
         <section class="email-list">
-            <ul>
-              <li v-for= "email in emails" :key="email.id" class="email-preview-container">
-                <ul>{{email.body}}</ul>
-             </li>
-            </ul>
+            <li v-for= "email in emails" :key="email.id">
+                <email-preview :email="email" @remove="deleteEmail"/>
+            </li>
         </section>
     `,
     data(){
@@ -17,7 +19,9 @@ export default {
         }
     },
     methods: {
-
+        deleteEmail(emailId){
+            this.$emit('remove', emailId);
+        }
     },
     computed: {
 
