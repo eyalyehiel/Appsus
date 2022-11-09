@@ -9,7 +9,7 @@ export default {
     template:`
         <section class="email-list app-main">
         <ul>
-            <li v-for= "email in emails" :key="email.id" class="email-preview-container">
+            <li v-for= "email in emails" :key="email.id" class="email-preview-container" @click="select(email.id)" >
                 <email-preview :email="email" @remove="deleteEmail"/>
             </li>
         </ul>
@@ -23,7 +23,10 @@ export default {
     methods: {
         deleteEmail(emailId){
             this.$emit('remove', emailId);
-        }
+        },
+        select(emailId) {
+            this.$router.push('/email/'+emailId);
+        },
     },
     computed: {
 

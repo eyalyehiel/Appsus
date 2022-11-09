@@ -6,7 +6,7 @@ export default {
         emailService,
     },
     template: `
-        <div class="email-preview">
+        <div class="email-preview" @click="setDetails(email.id)">
             <div>
                 <input type="checkbox">
                 <i class="far fa-star" :class="{checked:email.isStar}" @click.stop="changeColor(email)"></i>
@@ -16,7 +16,7 @@ export default {
            <p>{{email.subject}}</p>
            <p>{{email.sentAt}}</p>
            <div class="icons-preview">
-           <i class="fas fa-trash" :class={opacity:hover} @click.stop="deleteEmail(email.id)" ></i>
+           <i class="fas fa-trash" @click.stop="deleteEmail(email.id)" ></i>
            <i :class="setIcon" @click.stop="toggleIcon(email)"></i>
            </div>
         </div>
@@ -47,6 +47,13 @@ export default {
             emailService.save(email)
                 
         },
+        setDetails(emailId){
+            console.log('emailIdemailId',emailId )
+            this.email.isRead = true
+            emailService.save(this.email)
+
+            this.$router.push('/email/'+emailId)
+        }
     },
     computed: {
         setIcon() {

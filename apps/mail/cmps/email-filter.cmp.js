@@ -4,32 +4,35 @@ export default {
     props: ['counter'],
     components: {
 
+<<<<<<< HEAD
         
+=======
+>>>>>>> b807f111426b4dad597aed72d8887a5c5e241e58
     },
     template: `
         <div class="gmail-filter">
 
-        <div class="filter" @click="filter('inbox') ">
+        <div class="filter" @click="filter('inbox') " :class={select:selects.inbox}>
                 <i class="fas fa-inbox"></i>
                 <p>Inbox</p>
         </div>
 
-        <div class="filter" @click="filter('starred')">
+        <div class="filter" @click="filter('starred') " :class={select:selects.starred}>
         <i class="fas fa-star"></i>
         <p>Starred</p>
         </div>
 
-        <div class="filter" @click="filter('sent')">
+        <div class="filter" @click="filter('sent')" :class={select:selects.sent}>
         <i class="far fa-share-square"></i>
         <p>Sent</p>
         </div>
 
-        <div class="filter" @click="filter('drafts')">
+        <div class="filter" @click="filter('drafts')" :class={select:selects.drafts}>
         <i class="far fa-sticky-note"></i>
         <p>Drafts</p>
         </div>
 
-        <div class="filter" @click="filter('trash')">
+        <div class="filter" @click="filter('trash')" :class={select:selects.trash}>
         <i class="fas fa-trash"></i>
         <p>Trash</p>
         </div>
