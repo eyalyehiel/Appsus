@@ -4,7 +4,7 @@ import { eventBus } from "../../../services/event-bus.service.js"
 import noteAdd from "../cmps/note-add.cmp.js"
 import noteFilter from "../cmps/note-filter.cmp.js"
 import noteList from "../cmps/note-list.cmp.js"
-
+import noteDetails from "./note-details.cmp.js"
 
 export default {
 
@@ -13,6 +13,7 @@ export default {
         <note-filter @filter="filter" />
         <note-add @note-added="addNote"/>
         <note-list @duplicate-note="addNote"  @pin-note="pinNote" @update-note="changeBgColor" @delete-note="deleteNote" v-if="notes" :notes="notesToDisplay"/>
+        <note-details v-if :note=""/>
     </section>
     `,
     created() {
@@ -90,5 +91,6 @@ export default {
         noteAdd,
         noteFilter,
         noteList,
+        noteDetails
     }
 }
