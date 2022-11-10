@@ -54,7 +54,7 @@
   animation-name: css;
   animation-duration: calc(var(--speed) / 1.4);
 }
-i {
+.container-font i {
   display: flex;
   position: absolute;
   height: 4rem;
