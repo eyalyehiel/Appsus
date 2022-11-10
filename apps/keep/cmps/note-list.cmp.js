@@ -4,8 +4,8 @@ export default {
     props: ['notes'],
     template:`
      <section class="note-list">
-         <section  class="pin-notes">
-             <h3 v-if="!pinIsEmpty" class="title">Pinned</h3>
+         <section v-if="!pinIsEmpty" class="pin-notes">
+             <h3  class="title">Pinned</h3>
              <book-preview @duplicate-note="duplicateNote" @pin-note="pinNote" @update-note="changeBgColor" @delete-note="deleteNote" :note="note" v-for="note in pinNotes" :key="note.id"/>
             </section>
             <section  class="un-pin-notes">
