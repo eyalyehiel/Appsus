@@ -2,5 +2,80 @@
     position: fixed;
     right: 50%;
     top: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(50%,-50%);
+    background-color: aqua;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: fit-content;
+    width: max-content;
+    border: 1px solid #7c7c7c;
+    border-radius: 5px;
+    transition: box-shadow .2s;
+    overflow-wrap: anywhere;
+    background-color: #feefc3;
+}
+
+.note-details:hover {
+    box-shadow: 0 0 5px 0px #7c7c7c;
+}
+
+.note-details button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 0;
+    border-radius: 3em;
+    background-color: rgba(0, 0, 0, 0);
+
+}
+
+.note-details button:hover {
+    background: radial-gradient(#B1B1B1 20%, #fff 71%);
+}
+
+.note-details button>img {
+    width: 24px;
+}
+
+.controls {
+    display: flex;
+    width: 100%;
+}
+.pallete-holder {
+    position: relative;
+}
+
+.pallete {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+}
+.note-body{
+    width: 400px;
+    height: 200px;
+}
+.note-body img {
+    width: 252px;
+}
+
+iframe {
+    width: 252px;
+}
+
+.note-details h4 {
+    display: flex;
+    justify-content: space-between;
+}
+
+.note-details h4.done {
+    text-decoration: line-through;
+}
+
+.note-details .close-btn{
+    align-self: flex-end;
 }

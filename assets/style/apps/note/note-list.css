@@ -1,19 +1,23 @@
 .note-list {
     display: grid;
     gap: 10px;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: 26px 1fr 26px 1fr;
     overflow: auto;
+    /* align-items: center; */
+    padding-left: 10px;
 }
 .note-list .pin-notes{
     display: grid;
+    /* grid-template-rows: 30px repeat(auto-fill,1fr); */
     grid-template-columns: repeat(auto-fill,262px);
     gap: 10px;
 }
 .note-list .un-pin-notes{
     display: grid;
+    /* grid-template-rows: 30px repeat(auto-fill,1fr); */
     grid-template-columns: repeat(auto-fill,262px);
     gap: 10px;
 }
 .note-list .title{
-    grid-column: span 4;
+    /* height: 30px; */
 }

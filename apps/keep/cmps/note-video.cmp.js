@@ -1,13 +1,16 @@
 export default {
     props: ['info'],
-    template:`
+    template: `
     <section v-html="info.url" class="note-info">
         
     </section>
-    `,        created(){
-        },
-    data(){
-        return{
+    `,
+    created() {
+        console.log('test');
+        console.log(this.info);
+    },
+    data() {
+        return {
 
         }
     },

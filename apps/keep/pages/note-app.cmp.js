@@ -12,8 +12,8 @@ export default {
     <section class="note-app">
         <note-filter @filter="filter" />
         <note-add @note-added="addNote"/>
-        <note-list @duplicate-note="addNote"  @pin-note="pinNote" @update-note="changeBgColor" @delete-note="deleteNote" v-if="notes" :notes="notesToDisplay"/>
-        <note-details v-if :note=""/>
+        <note-list @open-details="openDetails" @duplicate-note="addNote" @pin-note="pinNote" @update-note="changeBgColor" @delete-note="deleteNote" v-if="notes" :notes="notesToDisplay"/>
+        <note-details @close-note="closeNote" v-if="noteToShow" :note="noteToShow"/>
     </section>
     `,
     created() {
@@ -28,10 +28,14 @@ export default {
             filterBy: {
                 txt: '',
                 types: ['note-txt','note-img','note-video','note-todos'],
-            }
+            },
+            noteToShow: null,
         }
     },
     methods: {
+        closeNote(){
+            this.noteToShow = null
+        },
         filter(filterBy){
             this.filterBy = filterBy
         },
@@ -67,6 +71,10 @@ export default {
                         })
                 })
         },
+        openDetails(note){
+            console.log('note',note)
+            this.noteToShow = note
+        }
     },
     computed: {
         notesToDisplay(){
@@ -75,6 +83,7 @@ export default {
                 if(note.type === 'note-txt') return regex.test(note.info.txt)
                 if(note.type === 'note-img') return regex.test(note.info.title)
                 if(note.type === 'note-todos') return regex.test(note.info.label)
+                if(note.type === 'note-video') return regex.test(note.info.txt)
             }) 
             notes = notes.filter(note => {
                 var isMatch = false
@@ -85,7 +94,8 @@ export default {
                 return isMatch 
             })
             return notes
-        }
+        },
+
     },
     components: {
         noteAdd,

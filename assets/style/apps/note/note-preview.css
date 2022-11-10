@@ -1,5 +1,4 @@
 .note-preview {
-
     padding: 5px;
     display: flex;
     flex-direction: column;
@@ -12,27 +11,27 @@
     overflow-wrap: anywhere;
     background-color: #feefc3;
 }
+
 .note-preview:hover {
     box-shadow: 0 0 5px 0px #7c7c7c;
 }
 
-.note-preview .note-info{
+.note-preview .note-info {
     width: 250px;
     overflow: hidden;
 }
 
-.note-preview button{
+.note-preview button {
     display: flex;
     align-items: center;
     justify-content: center;
     border: 0;
     border-radius: 3em;
     background-color: rgba(0, 0, 0, 0);
-
 }
 
-.note-preview button:hover{
-    background: radial-gradient( #B1B1B1 20%, #fff 71%);
+.note-preview button:hover {
+    background: radial-gradient(#B1B1B1 20%, #fff 71%);
 }
 
 .note-preview button>img {
@@ -41,12 +40,14 @@
 
 .options {
     display: flex;
+
 }
 
 
-.pallete-holder{
+.pallete-holder {
     position: relative;
 }
+
 .pallete {
     position: absolute;
     top: 0;
@@ -55,17 +56,20 @@
     height: 100%;
     opacity: 0;
 }
-    img{
-        width: 252px;
-    }
-    iframe{
-        width: 252px;
-    }
 
-    .note-preview h4 {
-        display: flex;
-        justify-content: space-between;
-    }
-    .note-preview h4.done {
-      text-decoration: line-through;
-    }
+.note-info img {
+    width: 252px;
+}
+
+iframe {
+    width: 252px;
+}
+
+.note-preview h4 {
+    display: flex;
+    justify-content: space-between;
+}
+
+.note-preview h4.done {
+    text-decoration: line-through;
+}

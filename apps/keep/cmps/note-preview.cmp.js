@@ -7,18 +7,16 @@ export default {
     props: ['note'],
     template: `
     <article :style="note.style" class="note-preview">
-        <component @click="openDetails" :is="note.type" :info="note.info" />
+        <component :is="note.type" :info="note.info" />
         <section class="options" >
-            <button @click="duplicateNote"><img src="./assets/img/icons/copy.png"></button>
-            <button @click="deleteNote"><img src="./assets/img/icons/garbage.png"></button>
+            <button @click.prevent="duplicateNote"><img src="./assets/img/icons/copy.png"></button>
+            <button @click.prevent="deleteNote"><img src="./assets/img/icons/garbage.png"></button>
             <button class="pallete-holder"><img src="./assets/img/icons/pallete.png"><input type="color" class="pallete" ref="pallete" @input="changeBgColor"></button>
-            <button @click="pinNote"><img src="./assets/img/icons/pin.png"></button>
-            <button><img src="./assets/img/icons/send.png"></button>
+            <button @click.prevent="pinNote"><img src="./assets/img/icons/pin.png"></button>
+            <button @click="openDetails"><img src="./assets/img/icons/edit.png"></button>
         </section>
     </article>
     `,
-    created(){
-    },
     data() {
         return {
             optionsOpen: false
@@ -48,7 +46,7 @@ export default {
             this.$emit('duplicate-note', duplicated)
         },
         openDetails(){
-            this.$emit('duplicate-note', duplicated)
+            this.$emit('open-details', this.note)
         }
     },
     computed: {

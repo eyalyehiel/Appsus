@@ -38,7 +38,7 @@ export default {
                 case 'note-img':
                 case 'note-video': this.newNote.info.url = this.inputData; break;
                 case 'note-txt': this.newNote.info.txt = this.inputData; break;
-                case 'note-todos': this.makeTodos()
+                case 'note-todos': this.makeTodos(); break;
             }
             this.$emit('note-added', this.newNote)
 
@@ -48,7 +48,7 @@ export default {
                 txt: 'Note added!',
                 type: 'succes'
             }
-            eventBus.emit('show-msg',msg)
+            // showSuccessMsg('Note added!')
         },
         setNewNote(type){
             if(type === 'note-txt'){

@@ -5,7 +5,7 @@ export default {
         <h3>Todo list</h3>
         <ul>
             <li v-for="todo in info.todos" :key="todo.txt">
-                <h4 :class="{done: !todo.doneAt}">{{todo.txt}} <input type="checkbox" :checked="!todo.doneAt" @change="isChecked(todo.txt)" /></h4>
+                <h4 :class="{done: !todo.doneAt}">{{todo.txt}} <input type="checkbox" :checked="todo.doneAt" @change="isChecked(todo.txt)" /></h4>
             </li>
         </ul>
 
