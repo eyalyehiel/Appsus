@@ -1,7 +1,9 @@
 export default {
     template: `
         <header class="app-header">
-            <h1><img class="img-logo" :src="imgUrl"/>Appsus</h1>
+            <router-link to="/">
+                <h1><img class="img-logo" :src="imgUrl"/>Appsus</h1>
+            </router-link>
             <nav>
                 <router-link @click="changeLogo('home')" to="/">Home</router-link> | 
                 <router-link @click="changeLogo('about')" to="/about">About</router-link> | 
@@ -12,16 +14,16 @@ export default {
     `,
     data(){
         return{
-            imgUrl: '',
+            imgUrl: 'assets/img/logos/home.png',
         }
     },
     methods: {
         changeLogo(value){
             switch(value){
-                case 'home': this.imgUrl="assets/img/home.png"; break;
-                case 'about': this.imgUrl="assets/img/mail.png";break;
-                case 'email': this.imgUrl="assets/img/mail.png"; break;
-                case 'keep': this.imgUrl="assets/img/icons/keep48dp.png";break;
+                case 'home': this.imgUrl="assets/img/logos/home.png"; break;
+                case 'about': this.imgUrl="assets/img/logos/about.png";break;
+                case 'email': this.imgUrl="assets/img/logos/mail.png"; break;
+                case 'keep': this.imgUrl="assets/img/logos/keep48dp.png";break;
             }
         }
     }

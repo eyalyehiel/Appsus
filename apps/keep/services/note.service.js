@@ -7,7 +7,7 @@ export const noteService ={
     post,
     remove,
     put,
-    pin,
+
 
 }
 
@@ -26,7 +26,7 @@ const gNotes = [
         id: "n102",
         type: "note-img",
         info: {
-            url: "http://some-img/me",
+            url: "https://image.cnbcfm.com/api/v1/image/106349589-1579720435046gettyimages-1192592454.jpeg?v=1579721288&w=929&h=523",
             title: "Bobi and Me"
         },
         style: {
@@ -72,12 +72,4 @@ function remove(noteId){
 function put(note){
     return storageService.put(NOTES_KEY,note)
 }
-function pin(noteId){
-    return storageService.query(NOTES_KEY)
-                        .then(notes => {
-                            const idx = notes.findIndex(note => note.id === noteId)
-                            const note = notes.splice(idx,1)[0]
-                            notes.unshift(note)
-                            utilService.saveToStorage(NOTES_KEY,notes)
-                        })
-}
+

@@ -3,7 +3,7 @@ export default {
     template:`
     <section class="note-filter">
             
-        <input @input="filter" v-model="filterBy.txt" type="search" class="search" />
+        <input @input="filter" v-model="filterBy.txt" type="search" placeholder="Search" class="search" />
         <h3 @click="isDisplayed = !isDisplayed">Display only:</h3>
         <section class="wrapper" :class="{display: isDisplayed}">
             
@@ -26,6 +26,12 @@ export default {
                     Videos
                 </label>
             </li>
+            <li>
+                <label>
+                    <input @change="setFilterType('note-todos')"  type="checkbox" checked/>
+                    Todos
+                </label>
+            </li>
         </ul>
 
     </section>
@@ -37,7 +43,7 @@ export default {
             isDisplayed: false,
             filterBy: {
                 txt: '',
-                types: ['note-txt','note-img','note-video']
+                types: ['note-txt','note-img','note-video','note-todos']
             }
         }
     },

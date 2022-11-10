@@ -26,7 +26,7 @@ export default {
             notes: null,
             filterBy: {
                 txt: '',
-                types: ['note-txt','note-img','note-video'],
+                types: ['note-txt','note-img','note-video','note-todos'],
             }
         }
     },
@@ -35,6 +35,7 @@ export default {
             this.filterBy = filterBy
         },
         addNote(newNote) {
+            console.log(newNote);
             noteService.post(newNote)
                 .then(() => {
                     noteService.query()
@@ -56,19 +57,27 @@ export default {
                         .then(notes => this.notes = notes)
                 })
         },
-        pinNote(noteId) {
-            noteService.pin(noteId)
+        pinNote(note) {
+            noteService.put(note)
                 .then(() => {
+                    console.log('hi');
                     noteService.query()
-                        .then(notes => this.notes = notes)
+                        .then(notes => {
+                            console.log('notes',notes);
+                            this.notes = notes
+                        })
                 })
         },
     },
     computed: {
         notesToDisplay(){
             const regex = new RegExp(this.filterBy.txt, 'i')
-            let notes = this.notes.filter(note => regex.test(note.info.txt))            
-            notes = this.notes.filter(note => {
+            let notes = this.notes.filter(note => {
+                if(note.type === 'note-txt') return regex.test(note.info.txt)
+                if(note.type === 'note-img') return regex.test(note.info.title)
+                if(note.type === 'note-todos') return regex.test(note.info.label)
+            }) 
+            notes = notes.filter(note => {
                 var isMatch = false
                 this.filterBy.types.forEach(type => {
                     if(type === note.type) 
@@ -76,6 +85,7 @@ export default {
                 })
                 return isMatch 
             })
+            console.log(notes);           
             return notes
         }
     },

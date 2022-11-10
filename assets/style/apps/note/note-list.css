@@ -1,6 +1,22 @@
 .note-list {
     display: grid;
+    /* grid-template-columns: repeat(auto-fill,262px); */
+    gap: 10px;
+    /* justify-content: center; */
+    grid-template-rows: 1fr 1fr;
+    overflow: auto;
+}
+.note-list .pin-notes{
+    display: grid;
     grid-template-columns: repeat(auto-fill,262px);
     gap: 10px;
-    justify-content: center;
+
+}
+.note-list .un-pin-notes{
+    display: grid;
+    grid-template-columns: repeat(auto-fill,262px);
+    gap: 10px;
+}
+.note-list .title{
+    grid-column: span 4;
 }

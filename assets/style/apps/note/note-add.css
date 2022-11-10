@@ -20,6 +20,10 @@
     align-items: center;
     justify-content: center;
 }
+.note-add button:hover{
+    background: radial-gradient( #B1B1B1 20%, #fff 71%);
+}
+
 
 .note-add img {
     width: 24px;
