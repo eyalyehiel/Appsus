@@ -2,12 +2,12 @@ export default {
 
     template:`
     <section class="note-filter">
-            
-        <input @input="filter" v-model="filterBy.txt" type="search" placeholder="Search" class="search" />
-        <h3 @click="isDisplayed = !isDisplayed">Display only:</h3>
-        <section class="wrapper" :class="{display: isDisplayed}">
-            
-            <ul>
+        
+        <!-- <input @input="filter" v-model="filterBy.txt" type="search" placeholder="Search" class="search" /> -->
+        
+        <button :class="{open: displaySearch}" class="searchBtn" @click="toggleSearch" ><input @input="filter" ref="searchInput" v-model="filterBy.txt" type="search" placeholder="Search" class="searchInput" /><img src="assets/img/icons/search.png"/></button>
+        <button :class="{open: displayType}" @click="displayType = !displayType"><input type="text" class="block" disabled/><img src="assets/img/icons/tune.png" alt="" /></button>
+            <ul :class="{open: displayType}">
                 <li>
                     <label>
                         <input @change="setFilterType('note-txt')"  type="checkbox" checked/>
@@ -33,14 +33,13 @@ export default {
                 </label>
             </li>
         </ul>
-
-    </section>
         
     </section>
     `,
     data(){
         return{
-            isDisplayed: false,
+            displaySearch: false,
+            displayType: false,
             filterBy: {
                 txt: '',
                 types: ['note-txt','note-img','note-video','note-todos']
@@ -48,6 +47,10 @@ export default {
         }
     },
     methods: {
+        toggleSearch(){
+            this.displaySearch = !this.displaySearch
+            this.$refs.searchInput.focus()
+        },
         setFilterType(value){
             if(this.filterBy.types.includes(value)) {
                 this.filterBy.types.splice(this.filterBy.types.indexOf(value),1)

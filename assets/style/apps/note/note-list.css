@@ -11,13 +11,16 @@
     /* grid-template-rows: 30px repeat(auto-fill,1fr); */
     grid-template-columns: repeat(auto-fill,262px);
     gap: 10px;
+    justify-content: center;
 }
 .note-list .un-pin-notes{
     display: grid;
     /* grid-template-rows: 30px repeat(auto-fill,1fr); */
     grid-template-columns: repeat(auto-fill,262px);
     gap: 10px;
+    justify-content: center;
 }
-.note-list .title{
-    /* height: 30px; */
+
+.note-list.fix-grid {
+    grid-template-rows: 26px 1fr;
 }
