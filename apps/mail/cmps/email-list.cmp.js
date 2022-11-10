@@ -8,6 +8,7 @@ export default {
     },
     template:`
         <section class="email-list app-main">
+            <input class="search-bar"type="text" placeholder="Search mail">
         <ul>
             <li v-for= "email in emails" :key="email.id" class="email-preview-container" @click="select(email.id)" >
                 <email-preview :email="email" @remove="deleteEmail"/>

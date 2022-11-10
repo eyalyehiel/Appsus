@@ -15,6 +15,7 @@ export default {
         <!-- <input @input="setFilter" v-model="filter.title" type="text" placeholder="Search mail" class="filter-text"> -->
     </div>
         <section class="email-app">
+            
             <email-filter @filtered="setFilter" />
             <email-list :emails="MailToShow" @remove="deleteEmail"/>         
         </section>
