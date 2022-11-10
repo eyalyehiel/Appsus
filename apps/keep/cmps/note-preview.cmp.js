@@ -5,9 +5,8 @@ import noteVideo from "./note-video.cmp.js";
 
 export default {
     props: ['note'],
-    template:`
+    template: `
     <article :style="note.style" class="note-preview">
-
         <component  :is="note.type" :info="note.info" />
         <section class="options" >
             <button @click="duplicateNote"><img src="./assets/img/icons/copy.png"></button>
@@ -18,23 +17,33 @@ export default {
         </section>
     </article>
     `,
-    data(){
-        return{
+    created(){
+        console.log(this.note);
+    },
+    data() {
+        return {
             optionsOpen: false
         }
     },
     methods: {
-        deleteNote(){
-            this.$emit('delete-note',this.note.id)
+        deleteNote() {
+            this.$emit('delete-note', this.note.id)
         },
-        changeBgColor(){
-            this.note.style = { backgroundColor: this.$refs.pallete.value}
-            this.$emit('update-note',this.note)
+        changeBgColor() {
+            this.note.style = { backgroundColor: this.$refs.pallete.value }
+            this.$emit('update-note', this.note)
         },
-        pinNote(){
-            this.$emit('pin-note',this.note.id)
+        pinNote() {
+            if (this.note.isPinned) {
+                this.note.isPinned = false
+                this.$emit('pin-note', this.note)
+                return
+            }
+            this.note.isPinned = true
+            this.$emit('pin-note', this.note)
+
         },
-        duplicateNote(){
+        duplicateNote() {
             var duplicated = this.note
             delete duplicated.id
             this.$emit('duplicate-note', duplicated)
