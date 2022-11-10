@@ -1,5 +1,7 @@
 .home-page {
-    height: 8vh;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
 }
 .container-font{
     margin-top: 100px;

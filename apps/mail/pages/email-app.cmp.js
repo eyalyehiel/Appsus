@@ -52,6 +52,7 @@ export default {
     },
     computed: {
         MailToShow() {
+            this.loadMails();
             if (!this.filterBy) return this.emails;
 
             if (this.filterBy === 'inbox') {
@@ -59,6 +60,9 @@ export default {
             }
             if (this.filterBy === 'starred') {
                 return this.emails.filter(email => email.isStar)
+            }
+            if (this.filterBy === 'drafts') {
+                return this.emails.filter(email => email.isDrafts)
             }
             if (this.filterBy === 'trash') {
                 return this.emails.filter(email => email.isTrash)

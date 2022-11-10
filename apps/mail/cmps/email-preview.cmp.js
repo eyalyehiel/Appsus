@@ -7,14 +7,13 @@ export default {
     },
     template: `
         <div class="email-preview" @click="setDetails(email.id)">
-            <div>
+            <div class="check-star">
                 <input type="checkbox">
                 <i class="far fa-star" :class="{checked:email.isStar}" @click.stop="changeColor(email)"></i>
             </div>
-
             <p>{{email.sendBy}}</p>
            <p>{{email.subject}}</p>
-           <p>{{email.sentAt}}</p>
+           <p class="time">{{email.sentAt}}</p>
            <div class="icons-preview">
            <i class="fas fa-trash" @click.stop="deleteEmail(email.id)" ></i>
            <i :class="setIcon" @click.stop="toggleIcon(email)"></i>
