@@ -60,10 +60,8 @@ export default {
         pinNote(note) {
             noteService.put(note)
                 .then(() => {
-                    console.log('hi');
                     noteService.query()
                         .then(notes => {
-                            console.log('notes',notes);
                             this.notes = notes
                         })
                 })
@@ -85,7 +83,6 @@ export default {
                 })
                 return isMatch 
             })
-            console.log(notes);           
             return notes
         }
     },

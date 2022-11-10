@@ -18,7 +18,6 @@ export default {
     </article>
     `,
     created(){
-        console.log(this.note);
     },
     data() {
         return {

@@ -12,7 +12,6 @@ export default {
     </section>
     `,
     created() {
-        console.log(this.info);
     },
     data() {
         return {
