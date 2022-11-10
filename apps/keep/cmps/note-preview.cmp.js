@@ -7,7 +7,7 @@ export default {
     props: ['note'],
     template: `
     <article :style="note.style" class="note-preview">
-        <component  :is="note.type" :info="note.info" />
+        <component @click="openDetails" :is="note.type" :info="note.info" />
         <section class="options" >
             <button @click="duplicateNote"><img src="./assets/img/icons/copy.png"></button>
             <button @click="deleteNote"><img src="./assets/img/icons/garbage.png"></button>
