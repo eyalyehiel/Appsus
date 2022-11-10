@@ -4,17 +4,21 @@ export default {
             <router-link to="/">
                 <h1><img class="img-logo" :src="imgUrl"/>Appsus</h1>
             </router-link>
-            <nav>
-                <router-link @click="changeLogo('home')" to="/">Home</router-link> | 
-                <router-link @click="changeLogo('about')" to="/about">About</router-link> | 
-                <router-link @click="changeLogo('email')" to="/email" >Email</router-link> |
-                <router-link @click="changeLogo('keep')" to="/keep" >Note</router-link>
+            <div @click="isOpen = !isOpen" class="menu">
+                    <img src="assets/img/logos/grid.png" alt="" />
+            </div>
+            <nav :class="{open: isOpen}">
+                <router-link @click="changeLogo('home')" to="/"><img src="assets/img/logos/home.png" /></router-link>
+                <router-link @click="changeLogo('about')" to="/about"><img src="assets/img/logos/about.png" /></router-link>
+                <router-link @click="changeLogo('email')" to="/email" ><img src="assets/img/logos/mail.png" /></router-link>
+                <router-link @click="changeLogo('keep')" to="/keep" ><img src="assets/img/logos/keep48dp.png" /></router-link>
             </nav>
         </header>
     `,
     data(){
         return{
             imgUrl: 'assets/img/logos/home.png',
+            isOpen: false
         }
     },
     methods: {

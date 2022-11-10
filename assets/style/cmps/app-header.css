@@ -2,7 +2,8 @@
   background-color: white;
   box-shadow: 0px 1px 2px 0px black;
   height: 10vh;
-  padding: 1em;
+  /* padding: 1em; */
+  padding-left: 1em;
   display: flex;
   align-items: center;
 }
@@ -15,7 +16,33 @@
   width: 38px;
   margin-right: 5px;
 }
-
+.app-header .menu {
+  margin: 0;
+}
+.app-header .menu img{
+  width: 42px;
+}
+.app-header nav{
+  position: fixed;
+  right: 75px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateX(calc(100% + 75px));
+  transition: transform .5s;
+}
+.app-header nav.open{
+  /* right: 75px; */
+  transform: translateX(calc(100% - 192px));
+}
+.app-header nav a{
+  display: flex;
+  align-items: center;
+}
+.app-header nav img {
+  width: 32px;
+  height: 32px;
+}
 .app-header h1 {
   font-weight: bold;
   font-family: Comfortaa;

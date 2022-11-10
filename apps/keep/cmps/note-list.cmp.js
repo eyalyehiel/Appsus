@@ -4,9 +4,9 @@ export default {
     props: ['notes'],
     template:`
      <section class="note-list">
-         <section v-if="!pinIsEmpty" class="pin-notes">
-             <h3  class="title">Pinned</h3>
-             <book-preview @duplicate-note="duplicateNote" @pin-note="pinNote" @update-note="changeBgColor" @delete-note="deleteNote" :note="note" v-for="note in pinNotes" :key="note.id"/>
+         <section class="pin-notes">
+             <h3 v-if="!pinIsEmpty" class="title">Pinned</h3>
+             <book-preview  @duplicate-note="duplicateNote" @pin-note="pinNote" @update-note="changeBgColor" @delete-note="deleteNote" :note="note" v-for="note in pinNotes" :key="note.id"/>
             </section>
             <section  class="un-pin-notes">
             <h3 v-if="!unPinIsEmpty" class="title">unPinned</h3>
@@ -15,8 +15,6 @@ export default {
      </section> 
     `,
     created(){
-        // this.pinnedNotes = this.notes.filter(note => note.isPinned)
-        // this.unPinnedNotes = this.notes.filter(note => !note.isPinned)
     },
     data(){
         return{
@@ -42,7 +40,6 @@ export default {
         pinNotes(){
             let notes = this.notes.filter(note => note.isPinned)
             this.pinIsEmpty = notes.length < 1 ? true : false
-            console.log('notes',notes)
             return notes
         },
         unPinNotes(){
