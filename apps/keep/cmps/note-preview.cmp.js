@@ -46,8 +46,10 @@ export default {
             var duplicated = this.note
             delete duplicated.id
             this.$emit('duplicate-note', duplicated)
+        },
+        openDetails(){
+            this.$emit('duplicate-note', duplicated)
         }
-
     },
     computed: {
 
