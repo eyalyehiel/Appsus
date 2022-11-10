@@ -277,9 +277,9 @@ function query() {
     return storageService.query(EMAILS_KEY);
 }
 
-function save(mail) {
+function save(mail,append = true) {
     if (mail.id) return storageService.put(EMAILS_KEY, mail);
-    else return storageService.post(EMAILS_KEY, mail);
+    else return storageService.post(EMAILS_KEY, mail, append);
 }
 
 function remove(emailId) {

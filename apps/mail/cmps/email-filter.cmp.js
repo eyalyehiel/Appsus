@@ -51,6 +51,7 @@ export default {
     },
     methods: {
         filter(sort) {
+            console.log('sort',sort)
             this.$emit('filtered', sort)
             for (const key in this.selects) {
                 if (key !== sort) {
