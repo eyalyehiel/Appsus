@@ -1,4 +1,5 @@
 /* Setup */
+
 @import 'setup/vars.css';
 @import 'setup/typography.css';
 
@@ -25,3 +26,6 @@
 
 /* ---mail-cmp--- */
 @import 'apps/mail/email-preview.css';
+@import 'apps/mail/home-page.css';
+@import 'apps/mail/about-page.css';
+

@@ -1,7 +1,17 @@
 export default {
 	template: `
-        <section class="about-page">
-            <h1>About us</h1>
-        </section>
+<section class="about-page">
+        <article class="person-container">
+     <figure><img src="./assets/style/apps/mail/unnamed.png" alt=""></figure>
+     <h2>Shon Chassel</h2>
+      <p>Course • Mindful Mike</p>
+   </article>
+   <article class="person-container">
+     <figure><img src="./assets/style/apps/mail/unnamed.png" alt=""></figure>
+    
+     <h2>Eyal Yehiel</h2>
+      <p>Course • Mindful Mike</p>
+   </article>
+</section>
     `
 }

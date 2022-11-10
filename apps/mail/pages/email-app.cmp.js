@@ -11,9 +11,11 @@ export default {
         emailDetails
     },
     template: `
+    <div>
+        <!-- <input @input="setFilter" v-model="filter.title" type="text" placeholder="Search mail" class="filter-text"> -->
+    </div>
         <section class="email-app">
             <email-filter @filtered="setFilter" />
-            <!-- <email-details/> -->
             <email-list :emails="MailToShow" @remove="deleteEmail"/>         
         </section>
     `,
@@ -26,6 +28,7 @@ export default {
             emails: null,
             selectedMail: null,
             filterBy: '',
+           
         };
     },
     methods: {
@@ -43,10 +46,14 @@ export default {
         setFilter(filterBy) {
             this.filterBy = filterBy;
         },
+        filter(filter) {
+            this.filter = filter;
+        }
     },
     computed: {
         MailToShow() {
             if (!this.filterBy) return this.emails;
+
             if (this.filterBy === 'inbox') {
                 return this.emails.filter(email => !email.isTrash || !email.isDrafts)
             }

@@ -21,7 +21,7 @@ const gMails = [{
      
      Registered office: Adobe Systems Software Ireland Limited, 4‑6 Riverwalk, Citywest Business Park, Dublin 24, Ireland. Registered number: 344992`],
     isRead: false,
-    sentAt: new Date().toLocaleString(),
+    sentAt: new Date().toDateString().slice(4, 10),
     to: 'momo@momo.com',
     sendBy: 'Wizz Air',
     isStar: true,
@@ -31,8 +31,8 @@ const gMails = [{
 },
 {
     id: 'e102',
-    subject: 'Canva updates',
-    body: 'Canva updates, as told by you Advertisement',
+    subject: 'Discover all you need',
+    body: 'Tomorrowland Headphones & Upcoming Events',
     title: [`Hi there,
 
     It’s one thing for us to tell you about new features, but it’s so much more special when we can share how these updates 
@@ -42,9 +42,9 @@ const gMails = [{
 
     The Canva Team`],
     isRead: false,
-    sentAt: new Date().toLocaleString(),
-    to: 'start@engage.canva.com',
-    sendBy: 'Canva',
+    sentAt: new Date().toDateString().slice(4, 10),
+    to: 'start@tomorrowland.com',
+    sendBy: 'Tomorrowland',
     isStar: false,
     isTrash: false,
     isDrafts: false,
@@ -64,7 +64,7 @@ const gMails = [{
 
     `],
     isRead: false,
-    sentAt: new Date().toLocaleString(),
+    sentAt: new Date().toDateString().slice(4, 10),
     to: 'newsletter@armadamusic.com',
     sendBy: 'A State Of Trance',
     isStar: false,
@@ -92,7 +92,7 @@ const gMails = [{
 
     When you become a Motley Fool member, you'll be joining a thriving community of likeminded investors that love this service. And I'm confident you `,],
     isRead: false,
-    sentAt: new Date().toLocaleString(),
+    sentAt: new Date().toDateString().slice(4, 10),
     to: 'fool@foolsubs.com',
     sendBy: 'The Motley Fool',
     isStar: false,
@@ -102,7 +102,7 @@ const gMails = [{
 },
 {
     id: 'e105',
-    subject: 'One last chance! Get $50 to start investing',
+    subject: 'Get $50 to start investing',
     body: 'Real Rewards by American Eagle',
     title: [`Real Rewards by American Eagle & Aerie members earn points on purchases (after discounts and before taxes and fees) made at American Eagle Outfitters® and Aerie®. Click here for Real Rewards by American Eagle & Aerie terms and conditions. See Real Rewards by American Eagle & Aerie terms and conditions to end your membership in Real Rewards. If you end your membership, you will no longer receive your free benefits, points towards rewards and email updates.
     `, `See the Real Rewards by American Eagle & Aerie Program terms and conditions for details at ae.com/realrewards/terms.
@@ -111,9 +111,9 @@ const gMails = [{
     © 2021 AEO Management Co. All Rights Reserved.
     `],
     isRead: false,
-    sentAt: new Date().toLocaleString(),
+    sentAt: new Date().toDateString().slice(4, 10),
     to: 'ae@e.ae.com',
-    sendBy: 'Real Rewards by AE & Aerie',
+    sendBy: 'Real Rewards & Aerie',
     isStar: false,
     isTrash: false,
     isDrafts: false,
@@ -131,7 +131,7 @@ const gMails = [{
     Adobe, Adobe Acrobat and the Adobe logo are either registered trademarks or trademarks of Adobe in the United States and/or other countries. All other trademarks are the property of their respective owners.
     `],
     isRead: false,
-    sentAt: new Date().toLocaleString(),
+    sentAt: new Date().toDateString().slice(4, 10),
     to: 'mail@mail.adobe.com',
     sendBy: 'Adobe Acrobat',
     isStar: false,
@@ -141,16 +141,15 @@ const gMails = [{
 },
 {
     id: 'e107',
-    subject: 'Exclusive live EP + new My Universe remix',
-    body: 'NEW LIVE EP OUT TODAY',
-    title: [`Hello everyone. Following the band's venue-opening show at Seattle’s new Climate Pledge Arena last month, an exclusive Live EP has been released today. The four-track EP, Live From Climate Pledge Arena, features Viva La Vida and Fix You alongside two songs from the new album Music Of The Spheres. It's available now exclusively on Amazon Music	
-    `, `NEW GALANTIS REMIX OF MY UNIVERSE
-    `,`Today also sees the release of a new remix of My Universe by Swedish electronic super duo Galantis. The track is available to stream / download everywhere now
-    `,`The Coldplay Messenger`],
+    subject: 'Your Next Scuba Escape...',
+    body: 'When Do You Want To Go Diving?',
+    title: [`With seasons and marine life in mind, we created an annual diving calendar which highlights the hotspots around the world in each month. Explore these destinations and book your next dream scuba vacation.	
+    `, `For snow lovers and those with a thirst for adventure, why not embrace the cold and a dry suit and head for the spectacular land and seascapes of Antarctica!
+    `,`Incredible Diving Destinations for Every Month`,`PADI Travel Loewenstrasse 1, 8001 Zürich, Switzerland`],
     isRead: false,
-    sentAt: new Date().toLocaleString(),
-    to: 'momo@momo.com',
-    sendBy: 'Wizz Air',
+    sentAt: new Date().toDateString().slice(4, 10),
+    to: 'travel@padi.com',
+    sendBy: 'PADI Travel',
     isStar: false,
     isTrash: false,
     isDrafts: false,
@@ -175,7 +174,7 @@ const gMails = [{
      
      Registered office: Adobe Systems Software Ireland Limited, 4‑6 Riverwalk, Citywest Business Park, Dublin 24, Ireland. Registered number: 344992`],
     isRead: false,
-    sentAt: new Date().toLocaleString(),
+    sentAt: new Date().toDateString().slice(4, 10),
     to: 'momo@momo.com',
     sendBy: 'Wizz Air',
     isStar: true,
@@ -196,7 +195,7 @@ const gMails = [{
 
     The Canva Team`],
     isRead: false,
-    sentAt: new Date().toLocaleString(),
+    sentAt: new Date().toDateString().slice(4, 10),
     to: 'start@engage.canva.com',
     sendBy: 'Canva',
     isStar: false,
@@ -218,7 +217,7 @@ const gMails = [{
 
     `],
     isRead: false,
-    sentAt: new Date().toLocaleString(),
+    sentAt: new Date().toDateString().slice(4, 10),
     to: 'newsletter@armadamusic.com',
     sendBy: 'A State Of Trance',
     isStar: false,
@@ -246,7 +245,7 @@ const gMails = [{
 
     When you become a Motley Fool member, you'll be joining a thriving community of likeminded investors that love this service. And I'm confident you `,],
     isRead: false,
-    sentAt: new Date().toLocaleString(),
+    sentAt: new Date().toDateString().slice(4, 10),
     to: 'fool@foolsubs.com',
     sendBy: 'The Motley Fool',
     isStar: false,
@@ -263,7 +262,7 @@ export const emailService = {
     save,
     remove,
     getById,
-    // getEmptyMail
+    getEmptyMail
 };
 
 function _createMails() {
@@ -293,4 +292,22 @@ function getById(emailId) {
         .then(email => {
             return email
         })
+}
+
+
+function getEmptyMail() {
+    return {
+        subject: '',
+        body: '',
+        title: [''],
+        isRead: false,
+        sentAt: new Date().toLocaleString(),
+        to: '',
+        sendBy: '',
+        isStar: false,
+        isTrash: false,
+        isDrafts: false,
+        isSent: false,
+        isDrafts: true
+    }
 }

@@ -1,15 +1,14 @@
-// import emailCompose from '../cmps/email-compose.cmp.js';
+import emailCompose from '../cmps/email-compose.cmp.js';
 
 export default {
     props: ['counter'],
     components: {
+        emailCompose
 
-        
-      
     },
     template: `
-        <div class="gmail-filter">
-
+    <div class="gmail-filter">
+        <email-compose />
         <div class="filter" @click="filter('inbox') " :class={select:selects.inbox}>
                 <i class="fas fa-inbox"></i>
                 <p>Inbox</p>
@@ -35,7 +34,7 @@ export default {
         <p>Trash</p>
         </div>
 
-       </div>
+    </div>
     `,
     data() {
         return {
@@ -51,7 +50,7 @@ export default {
         }
     },
     methods: {
-        filter(sort){
+        filter(sort) {
             this.$emit('filtered', sort)
             for (const key in this.selects) {
                 if (key !== sort) {

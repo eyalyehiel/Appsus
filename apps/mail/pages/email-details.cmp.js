@@ -11,7 +11,7 @@ export default {
     template: `
         <main class="email-details-container">
         <section>
-        <email-filter @click.native="filter" />
+        <email-filter @filtered="setFilter" />
         </section>
           <section v-if="email" class="email-details app-main">
           <div class="email-title">
@@ -62,7 +62,9 @@ export default {
        
     },
     methods: {
-
+        setFilter(){
+            this.$router.push('/email');
+        }
     },
     
     computed: {
