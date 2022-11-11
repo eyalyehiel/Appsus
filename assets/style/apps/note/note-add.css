@@ -6,8 +6,12 @@
 .note-add form {
     box-shadow:0 0 4px 1px;
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     border-radius: 10px;
+}
+.note-add .btns{
+    display: flex;
 }
 
 .note-add input, .note-add button{
@@ -21,7 +25,7 @@
     justify-content: center;
 }
 .note-add button:hover{
-    background: radial-gradient( #B1B1B1 20%, #fff 71%);
+    background: radial-gradient( rgba(177, 177, 177,30%) 50%, #fff 50%);
 }
 
 
@@ -40,4 +44,19 @@ input:focus {
 .last {
     border-start-end-radius: 10px;
     border-end-end-radius: 10px;
+}
+
+@media(max-width: 430px){
+    .note-add form{
+        width: 80%;
+    }
+    .note-add form input:first-child{
+        border-start-end-radius: 10px;
+    }
+    .first, .btns{
+        width: 100%;
+    }
+    .btns button:first-child{
+        border-end-start-radius: 10px;
+    }
 }

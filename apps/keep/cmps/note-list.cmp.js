@@ -3,9 +3,9 @@ import bookPreview from './note-preview.cmp.js'
 export default {
     props: ['notes'],
     template: `
-     <section class="note-list">
+     <section :style="fixGrid" class="note-list">
          <h3 v-if="!pinIsEmpty" class="title">Pinned</h3>
-         <section class="pin-notes">
+         <section v-show="!pinIsEmpty" class="pin-notes">
              <book-preview @open-details="openDetails" @duplicate-note="duplicateNote" @pin-note="pinNote" @update-note="changeBgColor" @delete-note="deleteNote" :note="note" v-for="note in pinNotes" :key="note.id"/>
             </section>
             <h3 v-if="!unPinIsEmpty" class="title">unPinned</h3>
@@ -41,6 +41,10 @@ export default {
         }
     },
     computed: {
+        fixGrid(){
+            if(!this.pinIsEmpty) return
+            return 'grid-template-rows: 26px 1fr'
+        },
         pinNotes() {
             let notes = this.notes.filter(note => note.isPinned)
             this.pinIsEmpty = notes.length < 1 ? true : false

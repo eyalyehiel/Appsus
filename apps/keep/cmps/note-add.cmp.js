@@ -7,11 +7,13 @@ export default {
          
         <form @submit.prevent="addNote">
             <input ref="text" v-model="inputData" class="first" type="text" placeholder="Enter text" />
-            <button @click.prevent="setNewNote('note-txt')"><img src="./assets/img/icons/noteadd.png"></button>
-            <button @click.prevent="setNewNote('note-img')"><img src="./assets/img/icons/image.png"></button>
-            <button @click.prevent="setNewNote('note-video')"><img src="./assets/img/icons/video.png"></button>
-            <button @click.prevent="setNewNote('note-todos')"><img src="./assets/img/icons/list.png"></button>
-            <button class="last"><img src="./assets/img/icons/add.png"></button>
+            <div class="btns">
+                <button @click.prevent="setNewNote('note-txt')"><img src="./assets/img/icons/noteadd.png"></button>
+                <button @click.prevent="setNewNote('note-img')"><img src="./assets/img/icons/image.png"></button>
+                <button @click.prevent="setNewNote('note-video')"><img src="./assets/img/icons/video.png"></button>
+                <button @click.prevent="setNewNote('note-todos')"><img src="./assets/img/icons/list.png"></button>
+                <button class="last"><img src="./assets/img/icons/add.png"></button>
+            </div>
         </form>
      </section>
     `,

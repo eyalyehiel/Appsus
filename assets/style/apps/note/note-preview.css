@@ -1,4 +1,5 @@
 .note-preview {
+    position: relative;
     padding: 5px;
     display: flex;
     flex-direction: column;
@@ -31,7 +32,7 @@
 }
 
 .note-preview button:hover {
-    background: radial-gradient(#B1B1B1 20%, #fff 71%);
+    background: radial-gradient( rgba(177, 177, 177,30%) 50%, rgba(177, 177, 177,30%) 50%);
 }
 
 .note-preview button>img {
@@ -40,9 +41,13 @@
 
 .options {
     display: flex;
-
+    opacity: 0;
+    transition: opacity .5s;
 }
 
+.note-preview:hover .options{
+    opacity: 1;
+}
 
 .pallete-holder {
     position: relative;
@@ -68,8 +73,94 @@ iframe {
 .note-preview h4 {
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
-.note-preview h4.done {
+.note-preview span.done {
     text-decoration: line-through;
+}
+.note-preview .timestamp{
+    font-size: 0.7em;
+}
+
+.note-preview .colors{
+    background-color: white;
+    display: flex;
+    border: 1px solid gray;
+    padding: 10px;
+    box-shadow: 0 0 0 0;
+    position: absolute;
+    bottom: -50px;
+    right: 50%;
+    z-index: 1;
+    transform: translateX(100%);
+    gap: 5px;
+    border-radius: 10px;
+    opacity: 0;
+    transition: opacity 1s;
+    pointer-events: none;
+}
+
+.note-preview .colors.open{
+    opacity: 1;
+    pointer-events: all;
+}
+.note-preview .btn {
+    padding: 20px;
+    border-radius: 10em;
+    border: 1px solid #7c7c7c;
+}
+.clr1{
+    background-color: #f28b82;
+}
+.clr2{
+    background-color: #fff475;
+}
+.clr3{
+    background-color: #fbbc04;
+}
+.clr4{
+    background-color: #ccff90;
+}
+.clr5{
+    background-color: #a7ffeb;
+}
+.clr6{
+    background-color: #cbf0f8;
+}
+.clr7{
+    background-color: #aecbfa;
+}
+.clr8{
+    background-color: #d7aefb;
+}
+.clr9{
+    background-color: #fdcfe8;
+}
+.clr10{
+    background-color: #e6c9a8;
+}
+.clr11{
+    background-color: #e8eaed;
+}
+.clr12 {
+    background-color: #fff;
+}
+
+@media (max-width: 765px){
+    .note-preview .colors{
+        right: 100%;
+        display: grid;
+        grid-template-columns: repeat(6,1fr);
+        grid-template-rows: 1fr 1fr;
+        bottom: -100px;
+    }
+}
+@media(max-width: 320px){
+    .note-preview .colors{
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+        grid-template-rows: 1fr 1fr 1fr;
+        bottom: -150px;
+    }
 }

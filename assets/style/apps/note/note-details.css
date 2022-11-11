@@ -30,15 +30,20 @@
     background-color: rgba(0, 0, 0, 0);
 
 }
-
-.note-details button:hover {
-    background: radial-gradient(#B1B1B1 20%, #fff 71%);
+.note-details input{
+    border: 0;
+    background-color: white;
+}
+.note-details input:focus {
+    outline: 0;
 }
 
+.note-details button:hover {
+    background: radial-gradient(rgba(177, 177, 177,30%) 50%, rgba(177, 177, 177,30%) 50%);
+}
 .note-details button>img {
     width: 24px;
 }
-
 .controls {
     display: flex;
     width: 100%;
@@ -46,7 +51,6 @@
 .pallete-holder {
     position: relative;
 }
-
 .pallete {
     position: absolute;
     top: 0;
@@ -55,6 +59,7 @@
     height: 100%;
     opacity: 0;
 }
+
 .note-body{
     width: 400px;
     height: 200px;
@@ -62,7 +67,6 @@
 .note-body img {
     width: 252px;
 }
-
 iframe {
     width: 252px;
 }
@@ -71,11 +75,9 @@ iframe {
     display: flex;
     justify-content: space-between;
 }
-
 .note-details h4.done {
     text-decoration: line-through;
 }
-
-.note-details .close-btn{
-    align-self: flex-end;
+.note-details .block{
+    flex-grow: 1;
 }

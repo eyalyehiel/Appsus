@@ -2,6 +2,7 @@ import noteImg from "./note-img.cmp.js";
 import noteTxt from "./note-txt.cmp.js";
 import noteTodos from "./note-todos.cmp.js";
 import noteVideo from "./note-video.cmp.js";
+import colorPicker from "./color-picker.cmp.js";
 
 export default {
     props: ['note'],
@@ -9,25 +10,28 @@ export default {
     <article :style="note.style" class="note-preview">
         <component :is="note.type" :info="note.info" />
         <section class="options" >
-            <button @click.prevent="duplicateNote"><img src="./assets/img/icons/copy.png"></button>
-            <button @click.prevent="deleteNote"><img src="./assets/img/icons/garbage.png"></button>
-            <button class="pallete-holder"><img src="./assets/img/icons/pallete.png"><input type="color" class="pallete" ref="pallete" @input="changeBgColor"></button>
-            <button @click.prevent="pinNote"><img src="./assets/img/icons/pin.png"></button>
-            <button @click="openDetails"><img src="./assets/img/icons/edit.png"></button>
+            <button @click.prevent="duplicateNote" title="Make a copy"><img src="./assets/img/icons/copy.png"></button>
+            <button @click.prevent="deleteNote" title="Delete"><img src="./assets/img/icons/garbage.png"></button>
+            <button class="pallete-holder" @click="isOpen = !isOpen" title="Change color"><img src="./assets/img/icons/pallete.png"></button>
+            <button @click.prevent="pinNote" title="Pin"><img src="./assets/img/icons/pin.png"></button>
+            <button @click="openDetails" title="Open note"><img src="./assets/img/icons/edit.png"></button>
         </section>
+
+        <color-picker @updateColor="changeBgColor" :class="{open: isOpen}"/>
     </article>
     `,
     data() {
         return {
-            optionsOpen: false
+            optionsOpen: false,
+            isOpen:false
         }
     },
     methods: {
         deleteNote() {
             this.$emit('delete-note', this.note.id)
         },
-        changeBgColor() {
-            this.note.style = { backgroundColor: this.$refs.pallete.value }
+        changeBgColor(value) {
+            this.note.style = { backgroundColor: value }
             this.$emit('update-note', this.note)
         },
         pinNote() {
@@ -56,6 +60,7 @@ export default {
         noteImg,
         noteTodos,
         noteTxt,
-        noteVideo
+        noteVideo,
+        colorPicker
     }
 }
