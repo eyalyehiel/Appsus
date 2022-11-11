@@ -11,12 +11,15 @@ export default {
     </div>
     <img class="logo" src="./assets/img/logos/homepage3.png" alt="">
     <section class="btns">
-
-        <button class="home-btn">Check Your Mails</button>
-        <button class="home-btn">Check Your Notes</button>
-
+        <button class="home-btn" @click="navigate('email')">Check Your Mails</button>
+        <button class="home-btn" @click="navigate('keep')" >Check Your Notes</button>
     </section>
 </section>
 
     `,
+    methods: {
+        navigate(to){
+            this.$router.push(`/${to}`);
+        }
+    }
 }

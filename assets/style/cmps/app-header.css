@@ -32,7 +32,7 @@
   transition: transform .5s;
 }
 .app-header nav.open{
-  /* right: 75px; */
+  right: 75px;
   transform: translateX(calc(100% - 192px));
 }
 .app-header nav a{

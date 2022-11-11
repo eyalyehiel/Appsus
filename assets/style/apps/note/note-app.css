@@ -1,5 +1,6 @@
 .note-app {
     height: 90vh;
+    /* width: 100vw; */
     display: grid;
     grid-template-rows: 10vh 80vh;
 }
