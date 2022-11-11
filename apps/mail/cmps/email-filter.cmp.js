@@ -8,7 +8,8 @@ export default {
     },
     template: `
     <div class="gmail-filter">
-        <email-compose />
+        <email-compose @upDate="upDate" />
+        
         <div class="filter" @click="filter('inbox') " :class={select:selects.inbox}>
                 <i class="fas fa-inbox"></i>
                 <p>Inbox</p>
@@ -53,11 +54,15 @@ export default {
         filter(sort) {
             console.log('sort',sort)
             this.$emit('filtered', sort)
+            
             for (const key in this.selects) {
                 if (key !== sort) {
                     this.selects[key] = false
                 } else this.selects[key] = true
             }
+        },
+        upDate(){
+            this.$emit('upDate')
         }
     },
     computed: {

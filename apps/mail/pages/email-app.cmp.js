@@ -16,8 +16,8 @@ export default {
     </div>
         <section class="email-app">
             
-            <email-filter @filtered="setFilter" />
-            <email-list :emails="MailToShow" @remove="deleteEmail"/>         
+            <email-filter @filtered="setFilter" @upDate="upDate"/>
+            <email-list :emails="MailToShow" @remove="deleteEmail" @filterByTxt="filterByTxt"/>         
         </section>
     `,
     created() {
@@ -28,7 +28,10 @@ export default {
         return {
             emails: null,
             selectedMail: null,
-            filterBy: '',
+            filterBy: {
+                type: '',
+                txt: '',
+            },
            
         };
     },
@@ -36,43 +39,65 @@ export default {
         loadMails() {
             emailService.query()
                 .then(emails => { this.emails = emails })
+                
         },
         deleteEmail(emailId) {
             emailService.remove(emailId).then(()=>{
                 this.emails = this.emails.filter(email => email.id !== emailId)
-                this.loadMails();
-                console.log(this.emails)
+                // this.loadMails();
+                this.upDate()
             })
         },
         setFilter(filterBy) {
-            this.filterBy = filterBy;
+            this.filterBy.type = filterBy;
         },
-        filter(filter) {
-            this.filter = filter;
+
+        filterByTxt(filterBy) {
+            console.log(filterBy);
+            this.filterBy.txt = filterBy;
+        },
+        upDate(){
+            emailService.query()
+            .then(emails => { this.emails = emails })
         }
     },
     computed: {
         MailToShow() {
-            this.loadMails();
-            if (!this.filterBy) return this.emails;
+            if (!this.emails) return 
+            
+            console.log('this.emails', this.emails);
+            console.log('this.filterBy.txt', this.filterBy.txt);
 
-            if (this.filterBy === 'inbox') {
-                return this.emails.filter(email => !email.isTrash || !email.isDrafts)
+            const searchStr = this.filterBy.txt.toLowerCase();
+            console.log('searchStr', searchStr)
+            
+            let emails = this.emails.filter(email => {
+                return email.subject.toLowerCase().includes(searchStr);})
+            
+
+            if (this.filterBy.type === 'inbox') {
+                return emails.filter(email => !email.isTrash || !email.isDrafts)
             }
-            if (this.filterBy === 'starred') {
-                return this.emails.filter(email => email.isStar)
+            if (this.filterBy.type === 'starred') {
+                return emails.filter(email => email.isStar)
             }
-            if (this.filterBy === 'drafts') {
-                return this.emails.filter(email => email.isDrafts)
+            if (this.filterBy.type === 'drafts') {
+                return emails.filter(email => email.isDrafts)
             }
-            if (this.filterBy === 'trash') {
-                return this.emails.filter(email => email.isTrash)
+            if (this.filterBy.type === 'trash') {
+                return emails.filter(email => email.isTrash)
             }
-            if (this.filterBy === 'sent') {
-                return this.emails.filter(email => email.isSent)
+            if (this.filterBy.type === 'sent') {
+                return emails.filter(email => email.isSent)
             }
-            return this.filterByTxt
+            console.log(this.emails);
+            return emails
         },
     },
 
 };
+
+ // const searchStr = this.filterBy.txt.toLowerCase();
+            // var emailToDisplay = this.emails.filter(email => {
+            //     return email.toLowerCase().includes(searchStr);
+            // });

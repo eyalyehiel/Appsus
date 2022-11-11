@@ -7,6 +7,7 @@
 }
 
 .email-app {
+  width: 90%;
   position: fixed;
   display: flex;
   justify-content: center;
@@ -25,23 +26,26 @@
   list-style: none;
 }
 
-.email-preview {
-  flex-direction: row;
+.email-preview-container {
+  /* display: flex; */
   align-items: center;
-  margin-inline-end: 80px;
+  justify-content: center;
 }
 
 .email-preview {
-  /* display: flex; */
-  /* align-items: center; */
   border: 0.8px solid rgb(223, 222, 222);
   padding: 15px;
-  /* justify-content: space-between; */
   background-color: rgba(233, 233, 233, 0.726);
   margin-inline-end: 4px;
   cursor: pointer;
   display: grid;
   grid-template-columns: 0.4fr 2fr 2fr 2fr 1.2fr;
+}
+
+.email-preview p{
+  display: flex;
+  align-items: center;
+  
 }
 
 .check-star {
@@ -50,6 +54,7 @@
 }
 
 .gmail-filter {
+  width: 10%;
   margin-top: 0px;
   margin-inline-start: 20px;
 }
@@ -60,8 +65,9 @@
   border-radius: 3px;
   border: 0.5px solid rgba(223, 222, 222, 0.342);
   display: flex;
-  gap: 40px;
+  gap: 20px;
   padding: 15px;
+  width: 148px;
 }
 
 .filter:hover {
@@ -111,35 +117,41 @@
 }
 
 /*? ------------email-details----------------- */
-
 .email-details-container {
-  justify-content: space-evenly;
+  padding-top: 80px;
+  height: 90vh;
+  width: 100%;
   display: grid;
-  grid-template-areas: "gmail-filter  email-details";
+  grid-template-columns: 1fr 6fr;
+}
+.gmail-filter {
+  width: 10%;
 }
 
-.email-details-container .gmail-filter {
-  width: 200px;
-  /* display: none; */
-}
-
-.email-title {
-  margin-top: 20px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+.email-details {
+  width: 90%;
 }
 
 .email-title {
   margin-top: 20px;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
 .email-details p {
   text-align: center;
   margin-top: 15px;
+}
+
+.send-details {
+  color: gray;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  align-items: baseline;
+  gap: 30px;
 }
 
 .send-body {
@@ -159,14 +171,12 @@
   color: gray;
 }
 
-.fa-envelope {
-  color: black;
+.trash {
+  opacity: 0;
 }
-.fa-envelope-open {
-  color: black;
-}
-.fa-trash {
-  color: black;
+
+.email-preview:hover .trash {
+  opacity: 1;
 }
 
 /*? ------------Compose-btn---------------- */
@@ -177,7 +187,7 @@
   align-items: center;
   background-color: rgb(235, 236, 236);
   border-radius: 30px;
-  margin-bottom: 5px;
+  margin-bottom: 14px;
   width: 150px;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -258,37 +268,27 @@
   outline: none;
 }
 
-.search-bar {
-  margin-left: 90px;
+.has-search .form-control {
+  padding-left: 2.3249999999999993rem;
+  border: 1px solid rgba(0, 0, 0, 0.192);
+  border-radius: 50px;
   background-color: rgb(235, 236, 236);
-  border-radius: 30px;
-  border: 1px solid rgba(0, 0, 0, 0.233);
   height: 55px;
   width: 300px;
-  font-size: 15px;
-  background-image: url(./assets/img/icons/search.png);
-  background-size: 22px;
+  margin-left: 87px;
 }
 
-.search-bar {
-  background-image: url(./assets/img/icons/search.png);
-  background-size: 22px;
+.has-search .form-control-feedback {
+  position: absolute;
+  z-index: 2;
+  text-align: center;
+  color: #aaa;
+  margin-left: 87px;
 }
 
-#myInput {
-  width: 20%;
-  font-size: 16px;
-  margin-bottom: 12px;
-  margin-left: 20px;
+.form-control-feedback {
   margin-top: 20px;
-  background-color: rgba(240, 248, 255, 0);
-  background-position: 10px 12px;
-  background-repeat: no-repeat;
-  padding: 12px 20px 12px 40px;
-  border-width: 1px;
-  border-style: solid;
-  border-color: rgb(221, 221, 221);
-  border-image: initial;
+  padding-left: 8px;
 }
 
 ::placeholder {
@@ -297,3 +297,13 @@
 
 /* background: rgb(32,185,58);
 background: radial-gradient(circle, rgba(32,185,58,0.7455357142857143) 7%, rgba(0,43,231,0.8099614845938375) 100%);  */
+
+.fa-envelope {
+  color: black;
+}
+.fa-envelope-open {
+  color: black;
+}
+.fa-trash {
+  color: black;
+}
