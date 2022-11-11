@@ -1,9 +1,9 @@
 .note-app {
     height: 90vh;
     display: grid;
-    /* grid-template-columns: 200px 1fr; */
     grid-template-rows: 10vh 80vh;
 }
+
 @media(max-width: 430px){
     .note-app{
         grid-template-rows: 15vh 75vh;
