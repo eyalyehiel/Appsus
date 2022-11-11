@@ -1,3 +1,7 @@
+p {
+  margin: 0 0 0em;
+}
+
 .email-app {
   height: 90vh;
   margin-top: 5%;
@@ -5,6 +9,7 @@
   display: grid;
   grid-template-areas: "gmail-filter email-list ";
 }
+
 
 .email-app {
   width: 90%;
@@ -42,10 +47,9 @@
   grid-template-columns: 0.4fr 2fr 2fr 2fr 1.2fr;
 }
 
-.email-preview p{
+.email-preview p {
   display: flex;
   align-items: center;
-  
 }
 
 .check-star {
@@ -83,6 +87,8 @@
 }
 .icons-preview {
   margin-left: 110px;
+  display: flex;
+  align-items: center;
 }
 .time {
   margin-left: 110px;
@@ -109,6 +115,7 @@
 
 .checked {
   color: red;
+  
 }
 
 .select {
