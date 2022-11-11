@@ -10,11 +10,12 @@ export default {
     },
     template: `
         <main class="email-details-container">
-        <section>
-        <email-filter @filtered="setFilter" />
-        </section>
-          <section v-if="email" class="email-details app-main">
-          <div class="email-title">
+
+            <section>
+            <email-filter class="gmail-filter" @filtered="setFilter" />
+            </section>
+        <section v-if="email" class="email-details app-main">
+                <div class="email-title">
                 <p>{{email.subject}}</p>
                 <div class="email-icons">
                     <i class="fas fa-share" ></i>
@@ -57,6 +58,8 @@ export default {
     },
     created() {
         const { emailId } = this.$route.params;
+        
+
         emailService.getById(emailId).then(email => this.email = email);
         console.log('mailId', this.$route.params)
        

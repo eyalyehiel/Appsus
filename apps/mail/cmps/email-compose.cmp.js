@@ -67,17 +67,18 @@ export default {
             eventBus.emit('show-msg', msg);
             this.NewEmail = emailService.getEmptyMail()
             console.log('this.NewEmail',this.NewEmail )
+            
         },
         saveDraft(){
             this.NewEmail.isSave = false
-            emailService.save(this.NewEmail)
+            emailService.save(this.NewEmail).then(()=>this.$emit('upDate'))
         },
         addMail(){
             clearInterval(this.myInterval)
             this.openModal()
             this.NewEmail.isSent = true
             this.NewEmail.isDrafts = false
-            emailService.save(this.NewEmail, false)
+            emailService.save(this.NewEmail, false).then(()=>this.$emit('upDate'))
             .then(() => {
                 const msg = {
                     txt: 'Send successfully',

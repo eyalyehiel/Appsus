@@ -7,17 +7,20 @@ export default {
     },
     template: `
         <div class="email-preview" @click="setDetails(email.id)">
+            
             <div class="check-star">
-                <input type="checkbox">
+                <input  type="checkbox">
                 <i class="far fa-star" :class="{checked:email.isStar}" @click.stop="changeColor(email)"></i>
+                
             </div>
             <p>{{email.sendBy}}</p>
            <p>{{email.subject}}</p>
            <p class="time">{{email.sentAt}}</p>
            <div class="icons-preview">
-           <i class="fas fa-trash" @click.stop="deleteEmail(email.id)" ></i>
-           <i :class="setIcon" @click.stop="toggleIcon(email)"></i>
+              <i class="fas fa-trash trash"  @click.stop="deleteEmail(email.id)" ></i>
+              <i :class="setIcon" @click.stop="toggleIcon(email)"></i>
            </div>
+           
         </div>
     `,
     data() {
@@ -51,7 +54,7 @@ export default {
             this.email.isRead = true
             emailService.save(this.email)
 
-            this.$router.push('/email/'+emailId)
+            this.$router.push(`/mail/${emailId}`)
         }
     },
     computed: {

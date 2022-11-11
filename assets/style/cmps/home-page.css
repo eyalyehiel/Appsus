@@ -2,6 +2,7 @@
     display: flex;
     align-items: center;
     justify-content: flex-start;
+    margin-top: 180px;
 }
 .container-font{
     margin-top: 100px;
@@ -150,4 +151,9 @@
 		opacity: 1;
 		transform: translateX(0) rotate(0deg);
 	}
+}
+
+.logo{
+  height: 309px
+
 }
