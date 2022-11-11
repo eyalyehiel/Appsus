@@ -10,7 +10,7 @@ export default {
             
             <div class="check-star">
                 <input  type="checkbox">
-                <i class="far fa-star" :class="{checked:email.isStar}" @click.stop="changeColor(email)"></i>
+                <i :class="setStar" :class="{checked:email.isStar}" @click.stop="changeColor(email)"></i>
                 
             </div>
             <p>{{email.sendBy}}</p>
@@ -40,7 +40,7 @@ export default {
             }
         },
         changeColor(email){
-            console.log(email);
+            
             email.isStar = !email.isStar
             emailService.save(email)
         },
@@ -61,6 +61,10 @@ export default {
         setIcon() {
             if (this.email.isRead) return 'fas fa-envelope-open'
             return 'fas fa-envelope'
+        },
+        setStar(){
+            if (this.email.isStar) return 'fa-solid fa-star'
+            return 'far fa-star'  
         },
     },
 }
