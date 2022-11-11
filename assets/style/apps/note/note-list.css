@@ -4,22 +4,52 @@
     grid-template-rows: 26px 1fr 26px 1fr;
     overflow: auto;
     overflow-x: hidden;
+    justify-items: center;
 }
 .note-list .pin-notes{
-    display: grid;
+    /* display: grid;
     grid-template-columns: repeat(auto-fill,262px);
     gap: 10px;
-    justify-content: center;
+    justify-content: center; */
+    columns: 4;
+    column-count: auto 262px;
     
 }
 .note-list .un-pin-notes{
-    display: grid;
+    /* display: grid;
     grid-template-columns: repeat(auto-fill,262px);
     gap: 10px;
-    justify-content: center;
+    justify-content: center; */
+    columns: 4;
+    column-count: auto 262px;
+}
+@media (max-width:1120px) {
+    .note-list .pin-notes{
+        columns: 3;
+    }
+    .note-list .un-pin-notes{
+        columns: 3;
+    }
+}
+@media (max-width:835px) {
+    .note-list .pin-notes{
+        columns: 2;
+    }    
+    .note-list .un-pin-notes{
+        columns: 2;
+    }
+}
+@media (max-width:560px) {
+    .note-list .pin-notes{
+        columns: 1;
+    }    
+    .note-list .un-pin-notes{
+        columns: 1;
+    }
 }
 .note-list .title{
     padding-left: 4.5%;
+    justify-self: start;
 }
 .note-list.fix-grid {
     grid-template-rows: 26px 1fr;

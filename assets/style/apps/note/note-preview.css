@@ -11,7 +11,8 @@
     transition: box-shadow .2s;
     overflow-wrap: anywhere;
     background-color: #fff;
-    break-inside: avoid-column
+    break-inside: avoid-column;
+    margin-bottom: 10px;
 }
 
 .note-preview:hover {
