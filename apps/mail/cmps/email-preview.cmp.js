@@ -18,7 +18,7 @@ export default {
            <p class="time">{{email.sentAt}}</p>
            <div class="icons-preview">
               <i class="fas fa-trash trash"  @click.stop="deleteEmail(email.id)" ></i>
-              <i :class="setIcon" @click.stop="toggleIcon(email)"></i>
+              <i :class="setIcon" :class="{isRead:email.isRead}" @click.stop="toggleIcon(email)"></i>
            </div>
            
         </div>
@@ -50,7 +50,7 @@ export default {
                 
         },
         setDetails(emailId){
-            console.log('emailIdemailId',emailId )
+            
             this.email.isRead = true
             emailService.save(this.email)
 
@@ -63,7 +63,7 @@ export default {
             return 'fas fa-envelope'
         },
         setStar(){
-            if (this.email.isStar) return 'fa-solid fa-star'
+            if (this.email.isStar) return 'fas fa-solid fa-star'
             return 'far fa-star'  
         },
     },

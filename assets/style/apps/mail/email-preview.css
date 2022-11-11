@@ -2,6 +2,10 @@ p {
   margin: 0 0 0em;
 }
 
+.btn-menu {
+  display: none;
+}
+
 .email-app {
   height: 90vh;
   margin-top: 5%;
@@ -9,7 +13,6 @@ p {
   display: grid;
   grid-template-areas: "gmail-filter email-list ";
 }
-
 
 .email-app {
   width: 90%;
@@ -114,8 +117,7 @@ p {
 }
 
 .checked {
-  color: red;
-  
+  color: rgb(201, 183, 23);
 }
 
 .select {
@@ -313,4 +315,31 @@ background: radial-gradient(circle, rgba(32,185,58,0.7455357142857143) 7%, rgba(
 }
 .fa-trash {
   color: black;
+}
+
+.isRead .email-preview {
+  background-color: black;
+}
+
+/*? -------------------? FOR MOBILE ONLY---------------- */
+
+@media (max-width: 800px) {
+  .btn-menu {
+    display: block;
+    border-radius: 5px;
+    height: 39px;
+    width: 36px;
+    font-weight: bold;
+    border: none;
+  }
+
+  .filter p {
+    display: none;
+  }
+
+  .filter {
+    width: 50px;
+    border-radius: 20px;
+    
+  }
 }

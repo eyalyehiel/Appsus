@@ -34,11 +34,12 @@ export default {
         <i class="fas fa-trash"></i>
         <p>Trash</p>
         </div>
-
     </div>
+    <!-- <button class="btn-menu" :class="{Menu:toggleMenu}"  @click.stop="toggleMenu()">☰</button> -->
     `,
     data() {
         return {
+           
             filterBy: null,
             isSelect: false,
             selects: {
@@ -52,20 +53,25 @@ export default {
     },
     methods: {
         filter(sort) {
-            console.log('sort',sort)
+            console.log('sort', sort)
             this.$emit('filtered', sort)
-            
+
             for (const key in this.selects) {
                 if (key !== sort) {
                     this.selects[key] = false
                 } else this.selects[key] = true
             }
         },
-        upDate(){
+        upDate() {
             this.$emit('upDate')
         }
     },
     computed: {
-
+        toggleMenu() {
+            return 'menu-open'
+        }
     },
+    watch: {
+       
+    }
 }
