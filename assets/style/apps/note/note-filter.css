@@ -1,22 +1,10 @@
 .note-filter {
     grid-row: span 2;
-    /* padding: 10px; */
-    /* box-shadow: 2px 1px 4px #7c7c7c; */
     position: fixed;
     padding-top: 100px;
+    z-index: 1;
 }
 
-/* .note-filter .search {
-    margin-top: 10px;
-    margin-left: 10px;
-    padding: .5em;
-    border: 0;
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 0 4px 1px;
-    margin-bottom: 10px;
-
-} */
 
 .note-filter ul {
     position: fixed;
@@ -49,9 +37,7 @@ input[type=checkbox]{
     border: 1px solid #7c7c7c;
     border-end-end-radius: 3em;
     border-start-end-radius: 3em;
-    /* background-color: rgba(0, 0, 0, 0); */
     background-color: white;
-
     transform: translateX(-70px);
     transition: transform 0.8s;
 }

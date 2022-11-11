@@ -35,13 +35,14 @@ export default {
             this.$emit('update-note', this.note)
         },
         pinNote() {
+            console.log(this.note);
             if (this.note.isPinned) {
                 this.note.isPinned = false
-                this.$emit('pin-note', this.note)
+                this.$emit('update-note', this.note)
                 return
             }
             this.note.isPinned = true
-            this.$emit('pin-note', this.note)
+            this.$emit('update-note', this.note)
 
         },
         duplicateNote() {
