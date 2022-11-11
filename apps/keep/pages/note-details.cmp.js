@@ -14,11 +14,13 @@ export default {
                     </ul>
             </section>
             <section class="controls">
-                <button @click.prevent="duplicateNote"><img src="./assets/img/icons/copy.png"></button>
-                <button @click.prevent="deleteNote"><img src="./assets/img/icons/garbage.png"></button>
-                <button class="pallete-holder"><img src="./assets/img/icons/pallete.png"><input type="color" class="pallete" ref="pallete" @input="changeBgColor"></button>
-                <button @click.prevent="pinNote"><img src="./assets/img/icons/pin.png"></button>
-                <button class="close-btn" @click="closeNote"><img src="./assets/img/icons/close.png"></button>
+                <button @click.prevent="duplicateNote" title="Make a copy"><img src="./assets/img/icons/copy.png"></button>
+                <button @click.prevent="deleteNote" title="Delete"><img src="./assets/img/icons/garbage.png"></button>
+                <button class="pallete-holder" title="Change color"><img src="./assets/img/icons/pallete.png"><input type="color" class="pallete" ref="pallete" @input="changeBgColor"></button>
+                <button @click.prevent="pinNote" title="Pin"><img src="./assets/img/icons/pin.png"></button>
+                <button @click.prevent="saveNote" title="Save changes"><img src="./assets/img/icons/save.png"></button>
+                <div class="block"></div>
+                <button class="close-btn" @click="closeNote" title="Close note"><img src="./assets/img/icons/close.png"></button>
             </section>
         </section>
     `,
@@ -34,6 +36,33 @@ export default {
         }
     },
     methods: {
+        saveNote(){
+            this.note.info.title = this.noteTxt
+            this.$emit('update-note', this.note)
+        },
+        deleteNote() {
+            this.closeNote()
+            this.$emit('delete-note', this.note.id)
+        },
+        changeBgColor() {
+            this.note.style = { backgroundColor: this.$refs.pallete.value }
+            this.$emit('update-note', this.note)
+        },
+        pinNote() {
+            if (this.note.isPinned) {
+                this.note.isPinned = false
+                this.$emit('pin-note', this.note)
+                return
+            }
+            this.note.isPinned = true
+            this.$emit('update-note', this.note)
+
+        },
+        duplicateNote() {
+            var duplicated = this.note
+            delete duplicated.id
+            this.$emit('duplicate-note', duplicated)
+        },
         closeNote() {
             this.$emit('close-note')
         },

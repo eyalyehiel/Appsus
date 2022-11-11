@@ -20,7 +20,9 @@
     gap: 10px;
     justify-content: center;
 }
-
+.note-list .title{
+    padding-left: 4.5%;
+}
 .note-list.fix-grid {
     grid-template-rows: 26px 1fr;
 }

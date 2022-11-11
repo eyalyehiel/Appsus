@@ -25,7 +25,7 @@
     justify-content: center;
 }
 .note-add button:hover{
-    background: radial-gradient( #B1B1B1 20%, #fff 71%);
+    background: radial-gradient( rgba(177, 177, 177,30%) 50%, #fff 50%);
 }
 
 
