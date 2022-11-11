@@ -10,6 +10,12 @@ export default {
         </h1>
     </div>
     <img class="logo" src="./assets/img/logos/homepage3.png" alt="">
+    <section class="btns">
+
+        <button class="home-btn">Check Your Mails</button>
+        <button class="home-btn">Check Your Notes</button>
+
+    </section>
 </section>
 
     `,
