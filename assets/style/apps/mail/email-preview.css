@@ -98,7 +98,7 @@ p {
 }
 
 .email-preview:hover {
-  background-color: rgba(250, 250, 250, 0.911);
+  
   box-shadow: inset 0 -2px 0 0 rgb(100 121 143 / 12%);
 }
 
@@ -112,7 +112,7 @@ p {
 }
 
 .checked {
-  color: rgb(201, 183, 23);
+  color: rgb(245 204 80);
 }
 
 .select {
@@ -181,6 +181,15 @@ p {
   opacity: 1;
 }
 
+.email-icons{
+  display: flex;
+  align-items: center; 
+  cursor: pointer;
+}
+
+.email-icons i{
+  padding: 5px
+}
 /*? ------------Compose-btn---------------- */
 
 .logo-plus {
@@ -316,10 +325,25 @@ background: radial-gradient(circle, rgba(32,185,58,0.7455357142857143) 7%, rgba(
   color: black;
 }
 
-.isRead .email-preview {
-  background-color: black;
+.email-preview{
+  font-weight: bolder;
+  color: black;
+}
+.email-preview:hover{
+  background-color: rgba(250, 250, 250, 0.911);
+  box-shadow: inset 1px 0 0 #dadce0, inset -1px 0 0 #dadce0, 0 1px 2px 0 rgb(60 64 67 / 30%), 0 1px 3px 1px rgb(60 64 67 / 15%);
+  z-index: 2;
 }
 
+
+.email-preview.isRead{
+  font-weight: normal;
+  
+}
+
+.first-letter{
+  display: none;
+}
 /*? -------------------? FOR MOBILE ONLY---------------- */
 
 @media (max-width: 800px) {
@@ -351,12 +375,18 @@ background: radial-gradient(circle, rgba(32,185,58,0.7455357142857143) 7%, rgba(
   .email-preview {
     max-width: 400px;
     height: 55px;
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-areas:"first-letter check-star p p p  icons";
   }
 
+  .icons-preview{
+    grid-area: icons;
+  }
   /*! ----------------none------------------ */
-  .email-preview p {
+  .email-preview .time{
+    display: none;
+  }
+  .email-preview .sendBy{
     display: none;
   }
 
@@ -368,9 +398,40 @@ background: radial-gradient(circle, rgba(32,185,58,0.7455357142857143) 7%, rgba(
   .email-list {
     position: absolute;
     left: auto;
+    overflow-x: hidden;
+  }
+
+  .email-list p{
+    grid-area: p;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .setIcon {
     position: absolute;
   }
+
+  .filter span{
+    display: none;
+  }
+
+  .first-letter{
+    border: 1px solid rgb(243, 242, 242);
+    grid-area: first-letter;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0px;
+    position: relative;
+    height: 32px;
+    width: 32px;
+    z-index: 0;
+  }
+
+  .check-star{
+    grid-area: check-star;
+  }
+
 }

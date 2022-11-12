@@ -1,7 +1,7 @@
 import emailCompose from '../cmps/email-compose.cmp.js';
 
 export default {
-    props: ['counter'],
+    props: ['emails'],
     components: {
         emailCompose
 
@@ -13,6 +13,7 @@ export default {
         <div class="filter" @click="filter('inbox') " :class={select:selects.inbox}>
                 <i class="fas fa-inbox"></i>
                 <p>Inbox</p>
+                <span>{{emailsLength}}</span>
         </div>
 
         <div class="filter" @click="filter('starred') " :class={select:selects.starred}>
@@ -37,9 +38,13 @@ export default {
     </div>
     <!-- <button class="btn-menu" :class="{Menu:toggleMenu}"  @click.stop="toggleMenu()">☰</button> -->
     `,
+    created() {
+        this.checkLength() 
+
+    },
     data() {
         return {
-           
+            emailsLength: 0,
             filterBy: null,
             isSelect: false,
             selects: {
@@ -64,6 +69,13 @@ export default {
         },
         upDate() {
             this.$emit('upDate')
+            
+        },
+        checkLength(){
+            if (!this.emails) return 
+            let email =  this.emails.filter(email =>  !email.isTrash || !email.isDrafts)    
+            this.emailsLength = email.length
+
         }
     },
     computed: {
@@ -72,6 +84,8 @@ export default {
         }
     },
     watch: {
-       
+        emails:function(val){
+            this.emailsLength = val.length
+        }
     }
 }

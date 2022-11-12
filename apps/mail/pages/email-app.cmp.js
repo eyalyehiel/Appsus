@@ -16,7 +16,7 @@ export default {
     </div>
         <section class="email-app">
             
-            <email-filter @filtered="setFilter" @upDate="upDate"/>
+            <email-filter @filtered="setFilter" @upDate="upDate" :emails="emails"/>
             <email-list :emails="MailToShow" @remove="deleteEmail" @filterByTxt="filterByTxt"/>         
         </section>
     `,

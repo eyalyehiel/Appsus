@@ -18,9 +18,9 @@ export default {
                 <div class="email-title">
                 <p>{{email.subject}}</p>
                 <div class="email-icons">
-                    <i class="fas fa-share" ></i>
+                    <i class="fas fa-share" @click.stop="goBack" ></i>
                     <i class="fas fa-paper-plane"></i>
-                    <i class="fas fa-trash"></i>
+                    <i class="fas fa-trash"  @click.stop="deleteEmail(email.id)"></i>
                 </div>
             </div>
             <div class="send-details">
@@ -67,6 +67,18 @@ export default {
     methods: {
         setFilter(){
             this.$router.push('/email');
+        },
+        goBack(){
+            this.$router.push('/email');
+        },
+        deleteEmail(emailId){
+            if (!this.email.isTrash) {
+                this.email.isTrash = true
+                emailService.save(this.email)
+            } else {
+                console.log('isTrash', emailId);
+                this.$emit('remove', emailId);
+            }
         }
     },
     
