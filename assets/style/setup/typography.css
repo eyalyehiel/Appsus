@@ -9,3 +9,7 @@
     font-family: ProductSans;
     src: url(../../fonts/Product\ Sans\ Bold.ttf);
 }
+@font-face {
+    font-family: Roboto;
+    src: url(../../fonts/Roboto-Thin.ttf);
+}

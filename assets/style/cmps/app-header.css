@@ -66,6 +66,7 @@
 @media (min-width: 440px){
   .app-header nav {
     flex-direction: row;
+    right: -75px;
     top: 10px;
     border:0;
   }

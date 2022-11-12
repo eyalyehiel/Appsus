@@ -1,8 +1,8 @@
 export default {
     template: `
         <header class="app-header">
-            <router-link to="/">
-                <h1><img class="img-logo" :src="imgUrl"/>Appsus</h1>
+            <router-link to="/" @click="changeLogo('home')">
+                <h1><img class="img-logo" :src="imgUrl"/>{{heading}}</h1>
             </router-link>
             <div @click="isOpen = !isOpen" class="menu">
                     <img src="assets/img/logos/grid.png" alt="" />
@@ -18,17 +18,35 @@ export default {
     data(){
         return{
             imgUrl: 'assets/img/logos/home.png',
+            heading: 'Appsus',
             isOpen: false
         }
     },
     methods: {
         changeLogo(value){
             switch(value){
-                case 'home': this.imgUrl="assets/img/logos/home.png"; break;
-                case 'about': this.imgUrl="assets/img/logos/about.png";break;
-                case 'email': this.imgUrl="assets/img/logos/mail.png"; break;
-                case 'keep': this.imgUrl="assets/img/logos/keep48dp.png";break;
+                case 'home': {
+                    this.imgUrl="assets/img/logos/home.png"; 
+                    this.heading="Appsus"
+                    break;
+                }
+                case 'about': {
+                    this.imgUrl="assets/img/logos/about.png";
+                    this.heading="About"
+                    break;
+                }
+                case 'email': {
+                    this.imgUrl="assets/img/logos/mail.png"; 
+                    this.heading="Gmail"
+                    break;
+                }
+                case 'keep': {
+                    this.imgUrl="assets/img/logos/keep48dp.png";
+                    this.heading="Keep"
+                    break;
+                }
             }
+            this.isOpen =false
         }
     }
 }

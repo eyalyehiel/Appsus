@@ -1,3 +1,6 @@
+import colorPicker from "../cmps/color-picker.cmp.js"
+
+
 export default {
     props: ['note'],
     template: `
@@ -16,12 +19,13 @@ export default {
             <section class="controls">
                 <button @click.prevent="duplicateNote" title="Make a copy"><img src="./assets/img/icons/copy.png"></button>
                 <button @click.prevent="deleteNote" title="Delete"><img src="./assets/img/icons/garbage.png"></button>
-                <button class="pallete-holder" title="Change color"><img src="./assets/img/icons/pallete.png"><input type="color" class="pallete" ref="pallete" @input="changeBgColor"></button>
+                <button class="pallete-holder" @click="isOpen = !isOpen" title="Change color"><img src="./assets/img/icons/pallete.png"></button>
                 <button @click.prevent="pinNote" title="Pin"><img src="./assets/img/icons/pin.png"></button>
                 <button @click.prevent="saveNote" title="Save changes"><img src="./assets/img/icons/save.png"></button>
                 <div class="block"></div>
                 <button class="close-btn" @click="closeNote" title="Close note"><img src="./assets/img/icons/close.png"></button>
             </section>
+            <color-picker @updateColor="changeBgColor" :class="{open: isOpen}"/>
         </section>
     `,
     created() {
@@ -33,6 +37,7 @@ export default {
             currNote: null,
             url: null,
             todos: null,
+            isOpen: false
         }
     },
     methods: {
@@ -84,7 +89,7 @@ export default {
                 }
                 case 'note-todos': {
                     this.todos = this.note.info.todos;
-                    this.noteTxt = this.note.info.txt
+                    this.noteTxt = this.note.info.label
                 }
             }
         }
@@ -92,4 +97,7 @@ export default {
     computed: {
 
     },
+    components: {
+        colorPicker
+    }
 }

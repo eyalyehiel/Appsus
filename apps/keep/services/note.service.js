@@ -72,4 +72,3 @@ function remove(noteId){
 function put(note){
     return storageService.put(NOTES_KEY,note)
 }
-

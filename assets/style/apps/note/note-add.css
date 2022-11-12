@@ -46,6 +46,18 @@ input:focus {
     border-end-end-radius: 10px;
 }
 
+.imgBtn{
+    position: relative;
+}
+input[type=file]{
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    width: 48px;
+
+}
+
 @media(max-width: 430px){
     .note-add form{
         width: 80%;
