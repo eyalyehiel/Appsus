@@ -9,6 +9,7 @@
     flex-wrap: wrap;
     align-items: center;
     border-radius: 10px;
+    background-color: #fff;
 }
 .note-add .btns{
     display: flex;

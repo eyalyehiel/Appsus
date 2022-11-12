@@ -5,14 +5,14 @@ export default {
     props: ['note'],
     template: `
         <section :style="this.note.style" class="note-details">
-            <input v-model="noteTxt" type="text" />
+            <input ref="input" v-model="noteTxt" type="text" />
             <section class="note-body">
                     <h3>{{noteTxt}}</h3>
                     <img v-if="currNote.type === 'note-img'" :src="url">
                     <section v-if="currNote.type === 'note-video'" v-html="url"></section>
                     <ul v-if="currNote.type === 'note-todos'">
                         <li v-for="todo in todos" :key="todo.txt">
-                        <h4 :class="{done: !todo.doneAt}">{{todo.txt}} <input type="checkbox" :checked="!todo.doneAt" /></h4>
+                        <h4 :class="{done: todo.doneAt}">{{todo.txt}} <input type="checkbox" :checked="todo.doneAt" /></h4>
                         </li>
                     </ul>
             </section>
@@ -42,7 +42,11 @@ export default {
     },
     methods: {
         saveNote(){
-            this.note.info.title = this.noteTxt
+            if(this.note.type === 'note-img' || this.note.type === 'note-sound') this.note.info.title = this.noteTxt
+            if(this.note.type === 'note-txt') this.note.info.txt = this.noteTxt
+            if(this.note.type === 'note-todos') this.note.info.label = this.noteTxt
+            if(this.note.type === 'note-video') this.note.info.url = this.noteTxt
+            
             this.$emit('update-note', this.note)
         },
         deleteNote() {

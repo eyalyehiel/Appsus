@@ -62,7 +62,7 @@
 
 .note-body{
     max-width: 300px;
-    height: 200px;
+    height: max-content;
 }
 .note-body img {
     width: 252px;

@@ -9,13 +9,13 @@ export default {
         <form @submit.prevent="addNote">
             <input ref="text" v-model="inputData" class="first" type="text" placeholder="Enter text" />
             <div class="btns">
-                <button @click.prevent="setNewNote('note-txt')"><img src="./assets/img/icons/noteadd.png"></button>
-                <button class="imgBtn" @click="setNewNote('note-img')"><img src="./assets/img/icons/image.png"><input type="file" @change="uploadImage($event)" /></button>
-                <button @click.prevent="setNewNote('note-video')"><img src="./assets/img/icons/video.png"></button>
-                <button @click.prevent="setNewNote('note-todos')"><img src="./assets/img/icons/list.png"></button>
-                <button class="imgBtn" @click="setNewNote('note-sound')"><img src="./assets/img/icons/sound.png"><input type="file" @change="uploadSound($event)" /></button>
+                <button title="Add Text note" @click.prevent="setNewNote('note-txt')"><img src="./assets/img/icons/noteadd.png"></button>
+                <button title="Add Image note" class="imgBtn" @click="setNewNote('note-img')"><img src="./assets/img/icons/image.png"><input type="file" @change="uploadImage($event)" /></button>
+                <button title="Add Video note" @click.prevent="setNewNote('note-video')"><img src="./assets/img/icons/video.png"></button>
+                <button title="Add List note" @click.prevent="setNewNote('note-todos')"><img src="./assets/img/icons/list.png"></button>
+                <button title="Add Sound note" class="imgBtn" @click="setNewNote('note-sound')"><img src="./assets/img/icons/sound.png"><input type="file" @change="uploadSound($event)" /></button>
             </div>
-            <button class="last"><img src="./assets/img/icons/add.png"></button>
+            <button title="Submit note" class="last"><img src="./assets/img/icons/add.png"></button>
         </form>
      </section>
     `,

@@ -5,15 +5,17 @@ import noteAdd from "../cmps/note-add.cmp.js"
 import noteFilter from "../cmps/note-filter.cmp.js"
 import noteList from "../cmps/note-list.cmp.js"
 import noteDetails from "./note-details.cmp.js"
+import appBackgrounds from "../../../views/app-backgrounds-cmp.js"
 
 export default {
 
     template: `
-    <section class="note-app">
+    <section :style="bgImg" class="note-app">
         <note-filter @filter="filter" />
         <note-add @note-added="addNote"/>
         <note-list @open-details="openDetails" @duplicate-note="addNote" @update-note="updateNote" @delete-note="deleteNote" v-if="notes" :notes="notesToDisplay"/>
-        <note-details @delete-note="deleteNote" @duplicate-note="addNote" @close-note="closeNote" v-if="noteToShow" :note="noteToShow"/>
+        <note-details @update-note="updateNote" @delete-note="deleteNote" @duplicate-note="addNote" @close-note="closeNote" v-if="noteToShow" :note="noteToShow"/>
+        <app-backgrounds />
     </section>
     `,
     created() {
@@ -21,6 +23,7 @@ export default {
             .then(notes => {
                 this.notes = notes
             })
+            eventBus.on('change-bg',this.changeBg)
     },
     data() {
         return {
@@ -30,6 +33,7 @@ export default {
                 types: ['note-txt','note-img','note-video','note-todos','note-sound'],
             },
             noteToShow: null,
+            bgImg: '',
         }
     },
     methods: {
@@ -66,7 +70,12 @@ export default {
         openDetails(note){
             console.log('note',note)
             this.noteToShow = note
-        }
+        },
+        changeBg(url){
+            console.log(url);
+            this.bgImg = { backgroundImage: 'url(https://lh5.ggpht.com/r0SGNlUNQocspUn5Vq3meD_B4XCMHNzmsYX7GYs40h_cddB-3omCWopHqNGVsUqgzL5mdXFFxQ=w380-h234-p-e365-k-no-nd)' }
+            console.log('this.bgImg',this.bgImg)
+        },
     },
     computed: {
         notesToDisplay(){
@@ -94,6 +103,7 @@ export default {
         noteAdd,
         noteFilter,
         noteList,
-        noteDetails
+        noteDetails,
+        appBackgrounds
     }
 }

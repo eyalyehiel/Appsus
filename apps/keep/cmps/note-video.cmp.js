@@ -6,8 +6,7 @@ export default {
     </section>
     `,
     created() {
-        console.log('test');
-        console.log(this.info);
+
     },
     data() {
         return {
