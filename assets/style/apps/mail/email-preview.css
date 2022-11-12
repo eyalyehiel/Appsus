@@ -98,7 +98,6 @@ p {
 }
 
 .email-preview:hover {
-  
   box-shadow: inset 0 -2px 0 0 rgb(100 121 143 / 12%);
 }
 
@@ -128,7 +127,6 @@ p {
   display: grid;
   grid-template-columns: 1fr 6fr;
 }
-
 
 .email-details {
   width: 90%;
@@ -181,14 +179,14 @@ p {
   opacity: 1;
 }
 
-.email-icons{
+.email-icons {
   display: flex;
-  align-items: center; 
+  align-items: center;
   cursor: pointer;
 }
 
-.email-icons i{
-  padding: 5px
+.email-icons i {
+  padding: 5px;
 }
 /*? ------------Compose-btn---------------- */
 
@@ -325,29 +323,28 @@ background: radial-gradient(circle, rgba(32,185,58,0.7455357142857143) 7%, rgba(
   color: black;
 }
 
-.email-preview{
+.email-preview {
   font-weight: bolder;
   color: black;
 }
-.email-preview:hover{
+.email-preview:hover {
   background-color: rgba(250, 250, 250, 0.911);
-  box-shadow: inset 1px 0 0 #dadce0, inset -1px 0 0 #dadce0, 0 1px 2px 0 rgb(60 64 67 / 30%), 0 1px 3px 1px rgb(60 64 67 / 15%);
+  box-shadow: inset 1px 0 0 #dadce0, inset -1px 0 0 #dadce0,
+    0 1px 2px 0 rgb(60 64 67 / 30%), 0 1px 3px 1px rgb(60 64 67 / 15%);
   z-index: 2;
 }
 
-
-.email-preview.isRead{
+.email-preview.isRead {
   font-weight: normal;
-  
 }
 
-.first-letter{
+.first-letter {
   display: none;
 }
 /*? -------------------? FOR MOBILE ONLY---------------- */
 
 @media (max-width: 800px) {
-  .gmail-filter{
+  .gmail-filter {
     z-index: 1;
   }
   .Compose-txt {
@@ -373,20 +370,19 @@ background: radial-gradient(circle, rgba(32,185,58,0.7455357142857143) 7%, rgba(
   }
 
   .email-preview {
-    max-width: 400px;
     height: 55px;
     display: grid;
-    grid-template-areas:"first-letter check-star p p p  icons";
+    grid-template-areas: "first-letter check-star p icons";
   }
 
-  .icons-preview{
+  .icons-preview {
     grid-area: icons;
   }
   /*! ----------------none------------------ */
-  .email-preview .time{
+  .email-preview .time {
     display: none;
   }
-  .email-preview .sendBy{
+  .email-preview .sendBy {
     display: none;
   }
 
@@ -401,22 +397,22 @@ background: radial-gradient(circle, rgba(32,185,58,0.7455357142857143) 7%, rgba(
     overflow-x: hidden;
   }
 
-  .email-list p{
+  .email-list p {
+    width: 115px;
     grid-area: p;
     display: flex;
     align-items: center;
-    justify-content: center;
   }
 
   .setIcon {
     position: absolute;
   }
 
-  .filter span{
+  .filter span {
     display: none;
   }
 
-  .first-letter{
+  .first-letter {
     border: 1px solid rgb(243, 242, 242);
     grid-area: first-letter;
     border-radius: 50%;
@@ -430,8 +426,12 @@ background: radial-gradient(circle, rgba(32,185,58,0.7455357142857143) 7%, rgba(
     z-index: 0;
   }
 
-  .check-star{
+  .check-star {
     grid-area: check-star;
+    width: 34px;
+    height: 34px;
   }
-
+  .icons-preview {
+    margin: 0 auto;
+  }
 }
