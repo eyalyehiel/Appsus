@@ -57,7 +57,6 @@ export default {
             
         },
         updateNote(note) {
-            console.log(note);
             noteService.put(note)
                 .then(() => {
                     noteService.query()
