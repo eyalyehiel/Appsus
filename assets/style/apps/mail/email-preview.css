@@ -8,25 +8,19 @@ p {
 
 .email-app {
   height: 90vh;
-  margin-top: 5%;
-  justify-content: space-between;
-  display: grid;
-  grid-template-areas: "gmail-filter email-list ";
-}
-
-.email-app {
-  width: 90%;
-  position: fixed;
+  width: 100%;
+  padding-top: 5%;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
 }
 
 .email-list {
-  width: 100%;
+  width: 90%;
+  overflow: auto;
 }
 
 .email-list ul {
-  width: 100%;
+  width: 90%;
   margin-left: 50px;
 }
 
@@ -64,6 +58,7 @@ p {
   width: 10%;
   margin-top: 0px;
   margin-inline-start: 20px;
+  cursor: pointer;
 }
 
 .filter {
@@ -133,9 +128,7 @@ p {
   display: grid;
   grid-template-columns: 1fr 6fr;
 }
-.gmail-filter {
-  width: 10%;
-}
+
 
 .email-details {
   width: 90%;
@@ -200,6 +193,7 @@ p {
   width: 150px;
   padding-top: 4px;
   padding-bottom: 4px;
+  cursor: pointer;
 }
 
 .logo-plus:before {
@@ -223,7 +217,8 @@ p {
   flex-direction: column;
   position: absolute;
   max-width: 400px;
-  left: 170px;
+  left: 20px;
+  bottom: 20px;
   height: 400px;
   margin-block-start: 250px;
   box-shadow: inset 0 -2px 0 0 rgb(100 121 143 / 12%);
@@ -287,6 +282,10 @@ p {
   margin-left: 87px;
 }
 
+.has-search {
+  position: relative;
+}
+
 .has-search .form-control-feedback {
   position: absolute;
   z-index: 2;
@@ -324,13 +323,11 @@ background: radial-gradient(circle, rgba(32,185,58,0.7455357142857143) 7%, rgba(
 /*? -------------------? FOR MOBILE ONLY---------------- */
 
 @media (max-width: 800px) {
-  .btn-menu {
-    display: block;
-    border-radius: 5px;
-    height: 39px;
-    width: 36px;
-    font-weight: bold;
-    border: none;
+  .gmail-filter{
+    z-index: 1;
+  }
+  .Compose-txt {
+    display: none;
   }
 
   .filter p {
@@ -340,6 +337,40 @@ background: radial-gradient(circle, rgba(32,185,58,0.7455357142857143) 7%, rgba(
   .filter {
     width: 50px;
     border-radius: 20px;
-    
+  }
+
+  .logo-plus {
+    width: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    height: 45px;
+  }
+
+  .email-preview {
+    max-width: 400px;
+    height: 55px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  /*! ----------------none------------------ */
+  .email-preview p {
+    display: none;
+  }
+
+  .email-app {
+    display: flex;
+    position: relative;
+  }
+
+  .email-list {
+    position: absolute;
+    left: auto;
+  }
+
+  .setIcon {
+    position: absolute;
   }
 }

@@ -10,15 +10,15 @@ export default {
         eventBus
     },
     template: `
-        <section>
-    <datalist id="mail-list">
+    <section>
+<datalist id="mail-list">
     <option value="info@netflix.com">
     <option value="travel@padidiver.com">
     <option value="main@tomorrowland.com">
     <option value="Customer@wizzair.com">
     <option value="news@dji.com">
-  </datalist>
-        <p class="logo-plus" @click="openModal">Compose</p>
+</datalist>
+        <p class="logo-plus" @click="openModal"><span class="Compose-txt">Compose</span></p>
         <transition name="slide-fade">
         </section>
         <div class="new-mail" v-if="show" >
