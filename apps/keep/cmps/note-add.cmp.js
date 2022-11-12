@@ -13,8 +13,9 @@ export default {
                 <button class="imgBtn" @click="setNewNote('note-img')"><img src="./assets/img/icons/image.png"><input type="file" @change="uploadImage($event)" /></button>
                 <button @click.prevent="setNewNote('note-video')"><img src="./assets/img/icons/video.png"></button>
                 <button @click.prevent="setNewNote('note-todos')"><img src="./assets/img/icons/list.png"></button>
-                <button class="last"><img src="./assets/img/icons/add.png"></button>
+                <button class="imgBtn" @click="setNewNote('note-sound')"><img src="./assets/img/icons/sound.png"><input type="file" @change="uploadSound($event)" /></button>
             </div>
+            <button class="last"><img src="./assets/img/icons/add.png"></button>
         </form>
      </section>
     `,
@@ -37,8 +38,10 @@ export default {
     },
     methods: {
         addNote() {
+            if(this.inputData === '')return
             switch (this.newNote.type) {
                 case 'note-img': this.newNote.info.title = this.inputData; break;
+                case 'note-sound': this.newNote.info.title = this.inputData; break;
                 case 'note-video': this.newNote.info.url = this.inputData; break;
                 case 'note-txt': this.newNote.info.txt = this.inputData; break;
                 case 'note-todos': this.makeTodos(); break;
@@ -51,9 +54,9 @@ export default {
                 txt: 'Note added!',
                 type: 'succes'
             }
-            // showSuccessMsg('Note added!')
         },
         setNewNote(type) {
+            console.log(type);
             if (type === 'note-txt') {
                 this.newNote = { type: 'note-txt', info: { txt: '' } }
                 this.$refs.text.placeholder = 'Enter text'
@@ -69,6 +72,10 @@ export default {
             } else if (type === 'note-todos') {
                 this.newNote = { type: 'note-todos', info: { label: '', todos: [] } }
                 this.$refs.text.placeholder = 'Enter comma seperated list'
+            } else if(type === 'note-sound'){
+                this.newNote = { type: 'note-sound', info: { url: '', title: '' } }
+                this.$refs.text.placeholder = 'Enter title'
+                return
             }
         },
         makeTodos() {
@@ -84,10 +91,17 @@ export default {
             reader.readAsDataURL(image);
             reader.onload = e =>{
                 this.newNote.info.url = e.target.result;
-                console.log(this.previewImage);
             }
+        },
+        uploadSound(e){
+            const sound = e.target.files[0];
+            const reader = new FileReader();
+            reader.readAsDataURL(sound);
+            reader.onload = e =>{
+                this.newNote.info.url = e.target.result;
         }
 
+    }
     },
     computed: {
 

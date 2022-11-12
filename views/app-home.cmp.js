@@ -1,3 +1,5 @@
+import { eventBus } from "../services/event-bus.service.js";
+
 export default {
 	template: `
 <section class="home-page">
@@ -20,6 +22,7 @@ export default {
     methods: {
         navigate(to){
             this.$router.push(`/${to}`);
+            eventBus.emit('navigate',to)
         }
     }
 }

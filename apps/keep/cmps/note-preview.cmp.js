@@ -2,6 +2,7 @@ import noteImg from "./note-img.cmp.js";
 import noteTxt from "./note-txt.cmp.js";
 import noteTodos from "./note-todos.cmp.js";
 import noteVideo from "./note-video.cmp.js";
+import noteSound from "./note-sound.cmp.js";
 import colorPicker from "./color-picker.cmp.js";
 
 export default {
@@ -62,6 +63,7 @@ export default {
         noteTodos,
         noteTxt,
         noteVideo,
+        noteSound,
         colorPicker
     }
 }

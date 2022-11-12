@@ -57,16 +57,28 @@ input[type=file]{
     width: 48px;
 
 }
+@media(max-width: 475px){
 
-@media(max-width: 430px){
+}
+
+@media(max-width: 475px){
     .note-add form{
         width: 80%;
     }
     .note-add form input:first-child{
         border-start-end-radius: 10px;
     }
-    .first, .btns{
+    .first{
+        order: -1;
+        flex-grow: 1;
+    }
+    .btns{
         width: 100%;
+        order:1;
+        justify-content: space-around;
+    }
+    .btns button:last-child{
+        border-end-end-radius: 10px;
     }
     .btns button:first-child{
         border-end-start-radius: 10px;

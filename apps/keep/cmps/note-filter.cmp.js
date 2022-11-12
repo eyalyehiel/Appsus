@@ -32,6 +32,12 @@ export default {
                     Todos
                 </label>
             </li>
+            <li>
+                <label>
+                    <input @change="setFilterType('note-sound')"  type="checkbox" checked/>
+                    Sounds
+                </label>
+            </li>
         </ul>
         
     </section>
@@ -42,7 +48,7 @@ export default {
             displayType: false,
             filterBy: {
                 txt: '',
-                types: ['note-txt','note-img','note-video','note-todos']
+                types: ['note-txt','note-img','note-video','note-todos','note-sound']
             }
         }
     },

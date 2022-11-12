@@ -172,3 +172,7 @@ iframe {
         bottom: -150px;
     }
 }
+
+audio{
+    width: 240px;
+}

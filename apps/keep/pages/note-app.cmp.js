@@ -27,7 +27,7 @@ export default {
             notes: null,
             filterBy: {
                 txt: '',
-                types: ['note-txt','note-img','note-video','note-todos'],
+                types: ['note-txt','note-img','note-video','note-todos','note-sound'],
             },
             noteToShow: null,
         }
@@ -76,6 +76,7 @@ export default {
                 if(note.type === 'note-img') return regex.test(note.info.title)
                 if(note.type === 'note-todos') return regex.test(note.info.label)
                 if(note.type === 'note-video') return regex.test(note.info.txt)
+                if(note.type === 'note-sound') return regex.test(note.info.title)
             }) 
             notes = notes.filter(note => {
                 var isMatch = false

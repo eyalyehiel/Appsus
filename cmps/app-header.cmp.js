@@ -1,3 +1,5 @@
+import { eventBus } from "../services/event-bus.service.js";
+
 export default {
     template: `
         <header class="app-header">
@@ -15,6 +17,9 @@ export default {
             </nav>
         </header>
     `,
+    created(){
+        eventBus.on('navigate',this.changeLogo)
+    },
     data(){
         return{
             imgUrl: 'assets/img/logos/home.png',
@@ -23,6 +28,7 @@ export default {
         }
     },
     methods: {
+
         changeLogo(value){
             switch(value){
                 case 'home': {
