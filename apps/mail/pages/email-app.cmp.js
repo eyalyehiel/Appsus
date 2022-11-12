@@ -17,7 +17,7 @@ export default {
         <section class="email-app">
             
             <email-filter @filtered="setFilter" @upDate="upDate" :emails="emails"/>
-            <email-list :emails="MailToShow" @remove="deleteEmail" @filterByTxt="filterByTxt"/>         
+            <email-list :emails="MailToShow" @remove="deleteEmail" @filterByTxt="filterByTxt" @upDateTrash="upDateTrash"/>         
         </section>
     `,
     created() {
@@ -59,12 +59,16 @@ export default {
         upDate(){
             emailService.query()
             .then(emails => { this.emails = emails })
+        },
+        upDateTrash(){
+            console.log('hey');
+            this.upDate()
         }
     },
     computed: {
         MailToShow() {
             if (!this.emails) return 
-            
+            console.log('hey');
             console.log('this.emails', this.emails);
             console.log('this.filterBy.txt', this.filterBy.txt);
 
@@ -76,7 +80,8 @@ export default {
             
 
             if (this.filterBy.type === 'inbox') {
-                return emails.filter(email => !email.isTrash || !email.isDrafts)
+                console.log('hey');
+                return emails.filter(email => !email.isTrash && !email.isDrafts)
             }
             if (this.filterBy.type === 'starred') {
                 return emails.filter(email => email.isStar)

@@ -37,6 +37,7 @@ export default {
             if (!this.email.isTrash) {
                 this.email.isTrash = true
                 emailService.save(this.email)
+                this.$emit('upDateTrash')
             } else {
                 console.log('isTrash', emailId);
                 this.$emit('remove', emailId);

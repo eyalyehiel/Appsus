@@ -165,8 +165,8 @@ const gMails = [{
 
 {
     id: 'e108',
-    subject: 'Miss you!',
-    body: 'Would love to catch up sometimes Would love',
+    subject: 'important message!',
+    body: 'Time system for the semester b',
     title: [`This is your day yaeli, make it legendary. 
     Here's a special surprise from TML by Tomorrowland to celebrate your birthday and to cherish unforgettable memories.
     
@@ -182,9 +182,9 @@ const gMails = [{
      Registered office: Adobe Systems Software Ireland Limited, 4‑6 Riverwalk, Citywest Business Park, Dublin 24, Ireland. Registered number: 344992`],
     isRead: false,
     sentAt: new Date().toDateString().slice(4, 10),
-    to: 'momo@momo.com',
-    sendBy: 'Wizz Air',
-    sendByFirst: 'W',
+    to: 'theOpen@openu.ac.il',
+    sendBy: 'The Open University',
+    sendByFirst: 'T',
     isStar: true,
     isTrash: false,
     isDrafts: false,
@@ -204,7 +204,7 @@ const gMails = [{
     The Canva Team`],
     isRead: false,
     sentAt: new Date().toDateString().slice(4, 10),
-    to: 'start@engage.canva.com',
+    to: 'start@canva.com',
     sendBy: 'Canva',
     sendByFirst: 'C',
     isStar: false,

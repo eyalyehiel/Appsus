@@ -16,7 +16,7 @@ export default {
             
         <ul>
             <li v-for= "email in emails" :key="email.id" class="email-preview-container" @click="select(email.id)" >
-                <email-preview :email="email" @remove="deleteEmail"/>
+                <email-preview :email="email" @remove="deleteEmail" @upDateTrash="upDateTrash"/>
             </li>
         </ul>
         </section>
@@ -38,6 +38,14 @@ export default {
         },
         select(emailId) {
             this.$router.push('/email/'+emailId);
+        },
+        upDate() {
+            this.$emit('upDate')
+            
+        },
+        upDateTrash() {
+            this.$emit('upDateTrash')
+            
         },
     },
     computed: {
