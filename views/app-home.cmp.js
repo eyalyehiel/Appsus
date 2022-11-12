@@ -1,8 +1,11 @@
 import { eventBus } from "../services/event-bus.service.js";
 
+
 export default {
+    
 	template: `
-<section class="home-page">
+<section class="home-page" >
+
     <div class="container-font">
         <h1>
             <i></i>
@@ -24,5 +27,6 @@ export default {
             this.$router.push(`/${to}`);
             eventBus.emit('navigate',to)
         }
-    }
+    },
+    
 }

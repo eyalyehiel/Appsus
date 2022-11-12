@@ -11,13 +11,13 @@ export default {
     },
     template: `
     <section>
-<datalist id="mail-list">
-    <option value="info@netflix.com">
-    <option value="travel@padidiver.com">
-    <option value="main@tomorrowland.com">
-    <option value="Customer@wizzair.com">
-    <option value="news@dji.com">
-</datalist>
+      <datalist id="mail-list">
+          <option value="info@netflix.com">
+          <option value="travel@padidiver.com">
+          <option value="main@tomorrowland.com">
+          <option value="customer@wizzair.com">
+          <option value="news@dji.com">
+     </datalist>
         <p class="logo-plus" @click="openModal"><span class="Compose-txt">Compose</span></p>
         <transition name="slide-fade">
         </section>

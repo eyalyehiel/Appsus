@@ -235,6 +235,7 @@ p {
   margin-block-start: 250px;
   box-shadow: inset 0 -2px 0 0 rgb(100 121 143 / 12%);
   background-color: white;
+  width: 300px
 }
 
 .new-mail p {

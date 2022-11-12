@@ -68,19 +68,12 @@ export default {
     computed: {
         MailToShow() {
             if (!this.emails) return 
-            console.log('hey');
-            console.log('this.emails', this.emails);
-            console.log('this.filterBy.txt', this.filterBy.txt);
-
             const searchStr = this.filterBy.txt.toLowerCase();
-            console.log('searchStr', searchStr)
-            
+
             let emails = this.emails.filter(email => {
                 return email.subject.toLowerCase().includes(searchStr);})
-            
 
             if (this.filterBy.type === 'inbox') {
-                console.log('hey');
                 return emails.filter(email => !email.isTrash && !email.isDrafts)
             }
             if (this.filterBy.type === 'starred') {
@@ -95,7 +88,6 @@ export default {
             if (this.filterBy.type === 'sent') {
                 return emails.filter(email => email.isSent)
             }
-            console.log(this.emails);
             return emails
         },
     },
