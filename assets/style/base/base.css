@@ -2,13 +2,13 @@
   box-sizing: border-box;
 }
 
-html {
-  
-}
 
 body {
   margin: 0;
   color: var(--clr4);
+  background-image: url(../../img/sea.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 h1,

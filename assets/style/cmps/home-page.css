@@ -67,7 +67,7 @@
 
 #a {
   color: var(--red);
-  background-color: white;
+  /* background-color: white; */
   animation-name: css;
   animation-duration: calc(var(--speed) / 4);
   animation-delay: 0s;
@@ -75,7 +75,7 @@
 
 #b {
   color: var(--yellow);
-  background-color: #fff;
+  /* background-color: #fff; */
   animation-name: css;
   animation-duration: calc(var(--speed) / 2);
 }
@@ -91,7 +91,7 @@
   position: absolute;
   height: 4rem;
   width: 9rem;
-  background-color: white;
+  /* background-color: white; */
   z-index: -100;
   transform: translate(10rem, 0rem);
   animation: cursor var(--speed) ease-out;

@@ -1,7 +1,8 @@
 .about-page {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  height: 80vh;
+  height: 90vh;
+
 }
 
 figure {
@@ -49,7 +50,7 @@ figure:after {
 
 .about-page article {
   --hover: 0;
-  margin: 200px;
+  /* margin: 200px; */
 }
 
 .about-page article:hover {
@@ -61,6 +62,12 @@ figure:after {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+}
+.about-page h2, .about-page p{
+  background-color: white;
+  padding: 5px;
+  margin-bottom: 5px;
+  border-radius: 5px;
 }
 
 @media (max-width: 520px) {

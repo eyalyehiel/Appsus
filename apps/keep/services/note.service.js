@@ -175,6 +175,30 @@ const gNotes = [
             backgroundColor: "#f28b82"
         }
     },
+    {
+        id: "n114",
+        type: "note-txt",
+        isPinned: true,
+        info: {
+            txt: "Learning Node today!"
+        },
+        style: {
+            backgroundColor: "#fff"
+        }
+    },
+    {
+        id: "n115",
+        type: "note-txt",
+        isPinned: true,
+        info: {
+            txt: `Bank account:\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0 
+            user: puki-shmuki \xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0\xA0
+            password: 123455shmuki`
+        },
+        style: {
+            backgroundColor: "#fff"
+        }
+    },
 ];
 
 
