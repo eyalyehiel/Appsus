@@ -20,6 +20,9 @@ const gNotes = [
         isPinned: true,
         info: {
             txt: "Fullstack Me Baby!"
+        },
+        style: {
+            backgroundColor: "#aecbfa"
         }
     },
     {
@@ -34,18 +37,19 @@ const gNotes = [
         }
     },
     {
-        id: "n102",
+        id: "n103",
         type: "note-img",
+        isPinned: true,
         info: {
             url: 'assets/img/noteImgs/dog.webp',
             title: "My dog"
         },
         style: {
-            backgroundColor: "#fff"
+            backgroundColor: "#fdcfe8"
         }
     },
     {
-        id: "n103",
+        id: "n104",
         type: "note-todos",
         info: {
             label: "Get my stuff together",
@@ -53,10 +57,13 @@ const gNotes = [
                 { txt: "Driving liscence", doneAt: null },
                 { txt: "Coding power", doneAt: 187111111 }
             ]
+        },
+        style: {
+            backgroundColor: "#fff"
         }
     },
     {
-        id: "n103",
+        id: "n105",
         type: "note-todos",
         info: {
             label: "House missions",
@@ -65,18 +72,24 @@ const gNotes = [
                 { txt: "Clean my room", doneAt: null },
                 { txt: "Clean the garden", doneAt: null }
             ]
+        },
+        style: {
+            backgroundColor: "#ccff90"
         }
     },
     {
-        id: "n103",
+        id: "n106",
         type: "note-video",
         info: {
             txt: "Get my stuff together",
             url: '<iframe width="560" height="315" src="https://www.youtube.com/embed/ig5oMN4XQz4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
+        },
+        style: {
+            backgroundColor: "#fff"
         }
     },
     {
-        id: "n102",
+        id: "n107",
         type: "note-img",
         info: {
             url: 'assets/img/noteImgs/garden.jpeg',
@@ -84,6 +97,82 @@ const gNotes = [
         },
         style: {
             backgroundColor: "#fff"
+        },
+
+    },
+    {
+        id: "n108",
+        type: "note-txt",
+        isPinned: true,
+        info: {
+            txt: "Surprise party for Kristin!"
+        },
+        style: {
+            backgroundColor: "#fff"
+        }
+    },
+    {
+        id: "n109",
+        type: "note-todos",
+        isPinned: true,
+        info: {
+            label: "Gift ideas",
+            todos: [
+                { txt: "New bike helmet", doneAt: null },
+                { txt: "Cute houseplant", doneAt: null },
+                { txt: "Picture frame", doneAt: null },
+                { txt: "Bottle of Whiskey", doneAt: null }
+            ]
+        },
+        style: {
+            backgroundColor: "#fff"
+        }
+    },
+    {
+        id: "n110",
+        type: "note-img",
+        info: {
+            url: 'assets/img/noteImgs/maldivies.jpeg',
+            title: "Possible destination"
+        },
+        style: {
+            backgroundColor: "#fff"
+        },
+
+    },
+    {
+        id: "n111",
+        type: "note-sound",
+        isPinned: true,
+        info: {
+            url: 'assets/sounds/chips.wav',
+            title: "Me eating chips at 3 am trying to finish this sprint"
+        },
+        style: {
+            backgroundColor: "#fff475"
+        },
+
+    },
+    {
+        id: "n112",
+        type: "note-txt",
+        isPinned: false,
+        info: {
+            txt: "Need to call my sister"
+        },
+        style: {
+            backgroundColor: "#aecbfa"
+        }
+    },
+    {
+        id: "n113",
+        type: "note-txt",
+        isPinned: true,
+        info: {
+            txt: "Car test tomarrow"
+        },
+        style: {
+            backgroundColor: "#f28b82"
         }
     },
 ];

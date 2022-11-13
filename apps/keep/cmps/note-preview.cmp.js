@@ -9,7 +9,7 @@ export default {
     props: ['note'],
     template: `
     <article :style="note.style" class="note-preview">
-        <component :is="note.type" :info="note.info" />
+        <component :is="note.type" :info="note.info" @updated-todo="updateTodo"/>
         <section class="options" >
             <button @click.prevent="duplicateNote" title="Make a copy"><img src="./assets/img/icons/copy.png"></button>
             <button @click.prevent="deleteNote" title="Delete"><img src="./assets/img/icons/garbage.png"></button>
@@ -32,6 +32,7 @@ export default {
             this.$emit('delete-note', this.note.id)
         },
         changeBgColor(value) {
+            this.isOpen=false
             this.note.style = { backgroundColor: value }
             this.$emit('update-note', this.note)
         },
@@ -53,7 +54,12 @@ export default {
         },
         openDetails(){
             this.$emit('open-details', this.note)
+        },
+        updateTodo(info){
+            this.note.info = info
+            this.$emit('update-note',this.note)
         }
+
     },
     computed: {
 

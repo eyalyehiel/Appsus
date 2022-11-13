@@ -28,6 +28,7 @@ export default {
             }
             todo.doneAt = new Date(Date.now()).toLocaleTimeString()
             console.log(this.info);
+            this.$emit('updated-todo',this.info)
         },
         setTodos(){
             // this.info.todos = this.info.todos.map(todo => {
